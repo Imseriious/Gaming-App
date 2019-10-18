@@ -1,9 +1,14 @@
 .GameCard {
-    height:300px;
-    width: 300px;
-    color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 280px;
+    height:280px;
     border: 1px solid black;
-    border-radius: 10px;
-    margin: 20px;
-    box-sizing: border-box;
 }
+
+h1 {
+    font-size: 1.6rem;
+}
+
+

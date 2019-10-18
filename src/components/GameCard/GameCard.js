@@ -3,19 +3,23 @@ import classes from './GameCard.module.css';
 
 import { Link } from 'react-router-dom';
 
+
 class Game extends Component {
     render() {
-        const URI = encodeURIComponent(this.props.title)
-        console.log(URI)
+        const hoursViewed = this.props.hours_viewed ? <h4>Hours Viewed: {this.props.hours_viewed}</h4> : null;
+        
+        
+
         return (
-                <Link to={URI} className={classes.GameCard}>
+        <div>
+                <Link to={`/game/${this.props.title}`} className={classes.GameCard}>
                     <h1>{this.props.title}</h1>
-                    <h3>{this.props.genre}</h3>
-                    <h4>{this.props.hours_viewed}</h4>
-                    <h5>{this.props.previous_rank}</h5>
-                    <p>{this.props.publisher}</p>
+                    <h3>Category: {this.props.genre}</h3>
+                    {hoursViewed}
                 </Link>
+        </div>
         )
+        
     }
 }
 

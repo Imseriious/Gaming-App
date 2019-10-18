@@ -1,0 +1,13 @@
+.TopPCRanking {
+    background-color: rgb(117, 255, 117);
+    width: 100%;
+}
+
+.ListOfGames {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
