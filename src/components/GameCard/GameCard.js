@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import classes from './GameCard.module.css';
-
+//Router
 import { Link } from 'react-router-dom';
+//Styles
+import {
+    StyledGameCard,
+    StyledHoursViewed,
+    StyledBoxArt
+} from '../StyledComponents/GameCard/StyledGameCard';
 
-
-class Game extends Component {
+//Component:
+class GameCard extends Component {
     render() {
-        const hoursViewed = this.props.hours_viewed ? <h4>Hours Viewed: {this.props.hours_viewed}</h4> : null;
-        
-        
+        const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
 
-        return (
-        <div>
-                <Link to={`/game/${this.props.title}`} className={classes.GameCard}>
-                    <h1>{this.props.title}</h1>
-                    <h3>Category: {this.props.genre}</h3>
-                    {hoursViewed}
-                </Link>
-        </div>
-        )
+        let hoursViewed = null;
         
+        
+        if(this.props.hoursViewed) {
+            let totalHours = this.props.hoursViewed.toFixed(0)
+            hoursViewed = <StyledHoursViewed>Total Hours Wached: {totalHours}</StyledHoursViewed>
+        }
+        
+        return (
+            <StyledGameCard>
+                <Link to={`/game/${this.props.title}`}>
+                    <StyledBoxArt src={boxart}/>
+                </Link>
+                {hoursViewed} 
+            
+            </StyledGameCard>
+        )
+
     }
 }
 
-export default Game;
+export default GameCard;

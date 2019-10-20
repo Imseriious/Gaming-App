@@ -1,4 +1,6 @@
-export const HOURS_WATCHED = 'HOURS_WATCHED';
-export const TOP_PC = 'TOP_PC';
+export const TOP_5_HOURS_WATCHED = 'TOP_5_HOURS_WATCHED';
+export const TOP_5_PC = 'TOP_5_PC';
 export const TOP_PC_RANKING = 'TOP_PC_RANKING';
-export const HOURS_WATCHED_RANKING = 'HOURS_WATCHED_RANKING';
+export const TOP_HOURS_WATCHED_RANKING = 'TOP_HOURS_WATCHED_RANKING';
+export const GAME_ID = 'GAME_ID';
+export const GAME_DETAILS = 'GAME_DETAILS';

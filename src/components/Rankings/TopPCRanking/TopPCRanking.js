@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
+//Axios-Redux
 import axios from 'axios';
-import classes from './TopPCRanking.module.css';
+import {topPCRankingUrl, headers} from '../../../axios/axios';
 import { connect } from 'react-redux';
-import * as actionType from '../../store/actions';
+import * as actionType from '../../../store/actions';
+//Components:
+import GameCard from '../../GameCard/GameCard';
+//Styles:
+import { 
+    StyledContainer, 
+    StyledListOfGames,
+    StyledTitle,
+} from '../../StyledComponents/Rankings/styledRankings';
 
-import GameCard from '../GameCard/GameCard';
-
+//Component:
 class TopPCRanking extends Component {
-    UNSAFE_componentWillMount() {
+    componentDidMount() {
         this.getTopPcRanking()
     }
 
     getTopPcRanking() {
-        const API_URL = "https://api.newzoo.com/v1.0/pc_player_usage/game/comparison_data?fields=rank,rank_change,title,publisher,genre,player_share,sessions_per_user_per_day,average_playtime_per_day,average_session_time&start_date=2019-09-01&end_date=2019-09-30&comp_start_date=2019-08-01&comp_end_date=2019-08-31&geo_type=global&limit=50&__permission_set=Game%20Rankings";
-        const header = {
-            headers: { "Authorization": "Bearer Lzt_hDtx0xiQ-zvfAdsyiTcEfW_0vRUdKJPN24JtzoQ" }
-        }
-        axios.get(API_URL, header)
+        ;
+
+        axios.get(topPCRankingUrl, headers)
             .then((res) => {
                 console.log(res.data.data)
                 this.props.topPCRanking(res)
@@ -42,17 +48,18 @@ class TopPCRanking extends Component {
         }
 
         return (
-            <div className={classes.TopPCRanking}>
-                <h1>Top PC Games</h1>
-                <div className={classes.ListOfGames}>
+            <StyledContainer>
+                <StyledTitle>Top PC Games</StyledTitle>
+                <StyledListOfGames>
                     {listOfGames}
-                </div>
-            </div>
+                </StyledListOfGames>
+            </StyledContainer>
         )
     }
 
 }
 
+//React-Redux
 const mapDispatchToProps = dispatch => {
     return {
         topPCRanking: (res) => dispatch({ type: actionType.TOP_PC_RANKING, payload: res })

@@ -1,14 +1,21 @@
 import React from 'react';
-import classes from './Search.module.css';
+//Assets:
+import Searchicon from '../../assets/search.svg';
+//Styles:
+import {
+    StyledForm,
+    StyledInput,
+    StyledButton,
+    StyledSearchButtonIcon
+} from '../StyledComponents/Search/StyledSearch';
 
+//Component:
 const Search = () => {
     return (
-        <div className={classes.Search}>
-            <form>
-                <input type="text" placeholder="Search Game..." />
-                <button>Go!</button>
-            </form>
-        </div>
+        <StyledForm>
+                <StyledInput type="text" placeholder="Search Game..." />
+                <StyledButton><StyledSearchButtonIcon src={Searchicon}/></StyledButton>
+        </StyledForm>
     )
 }
 

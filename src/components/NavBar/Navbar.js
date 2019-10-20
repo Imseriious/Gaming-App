@@ -1,17 +1,25 @@
 import React from 'react';
-import classes from './Navbar.module.css';
+//Components: 
+import Search from '../Search/Search';
+import NightMode from '../NightMode/NightMode';
+//Assets:
 import Logo from '../../assets/newzoo-logo.svg';
+//Styles:
+import {
+    StyledNavBar,
+    StyledLogo,
+} from '../StyledComponents/NavBar/StyledNavBar';
 
+//Component: 
 const Navbar = () => {
-    return(
-        <div className={classes.Navbar}>
-            <a href="/"><img src={Logo} className={classes.Logo}/></a>
-            <h1 className={classes.NightMode}>NightMode</h1>
-            <div className={classes.Options}>
-                <a href="/TopPcRanking">Top PC Games</a><span> | </span><a href="/HoursWatchedRanking">Most Viewed Games</a>
-            </div>
-        </div>
+    
+    return (
+        <StyledNavBar>
+            <StyledLogo src={Logo}/>
+            <Search />
+            <NightMode />
+        </StyledNavBar>
     )
 }
 
-export default Navbar;
+export default Navbar; //ADD ROUTER LINK
