@@ -7,10 +7,16 @@ import { connect } from 'react-redux';
 //Components:
 import BoxArtSection from './GameDetailsComponents/BoxArtSection';
 import DetailsSection from './GameDetailsComponents/DetailsSection';
-import MediaDescriptionSection from './GameDetailsComponents/MediaDescriptionSection/MediaDescriptionSection';
+import DescriptionSection from './GameDetailsComponents/DescriptionSection';
+import MediaSection from './GameDetailsComponents/MediaSection';
+import RequirementsSection from './GameDetailsComponents/RequirementsSection';
 //Styles:
-import { StyledGameDetails } from '../StyledComponents/GameDetails/StyledGameDetails';
-import { platform } from 'os';
+import {
+    StyledGameDetails,
+    StyledContainer,
+    StyledMediaSection,
+    StyledDescriptionsRequirements
+} from '../StyledComponents/GameDetails/StyledGameDetails';
 
 //Component:
 class GameDetails extends Component {
@@ -46,46 +52,60 @@ class GameDetails extends Component {
         let gameDetails;
         let detailsSection;
         let boxArtSection;
-        let mediaDescriptionSection;
+        let descriptionSection;
+        let mediaSection;
+        let requirementsSection;
 
-        if (this.props.gameIdState !== null) {
-            console.log("Check Game ID State:", this.props.gameIdState)
-        }
-        if(this.props.gameDetailsState !== null) {
+        //If statments because I don't know other ways of checking if the state is updated before rendering.
+
+        if (this.props.gameDetailsState !== null) {
             gameDetails = this.props.gameDetailsState
             console.log(gameDetails)
         }
-        if(gameDetails !== undefined) {
-            boxArtSection = 
-                <BoxArtSection 
-                    name={gameDetails.name}/>;
-        }
         if (gameDetails !== undefined) {
+            //BoxArtSection:
+            boxArtSection =
+                <BoxArtSection
+                    name={gameDetails.name} />;
+            //DetailsSection:
             let gamePublishers = gameDetails.publishers.map(publisher => publisher.name)
-            detailsSection = 
-                <DetailsSection 
-                    publishers={gamePublishers} 
+            detailsSection =
+                <DetailsSection
+                    key={gamePublishers}
+                    publishers={gamePublishers}
                     genre={gameDetails.genres[0].name}
                     release={gameDetails.release_date}
                     rank={gameDetails.rank}
                     platforms={gameDetails.release_dates[0].platforms}
-                    />
-        }
-
-        if (gameDetails !== undefined) {
-            mediaDescriptionSection = 
-                <MediaDescriptionSection 
+                />
+            //DescriptionSection:
+            descriptionSection =
+                <DescriptionSection
                     description={gameDetails.description}
-                    files={gameDetails.media_files}
-                    />
+                />
+            //MediaSection:
+            mediaSection = <MediaSection files={gameDetails.media_files} />
+            //RequirementsSection
+            requirementsSection = <RequirementsSection requirements={gameDetails.hardware_requirements} />
         }
 
         return (
-            <StyledGameDetails>
-                {boxArtSection}
-                {detailsSection}
-                {mediaDescriptionSection}
-            </StyledGameDetails>
+            <StyledContainer >
+                <StyledGameDetails>
+                    {boxArtSection}
+                    {detailsSection}
+                    <StyledDescriptionsRequirements>
+                        {descriptionSection}
+                        {requirementsSection}
+                    </StyledDescriptionsRequirements>
+
+                </StyledGameDetails>
+
+                <StyledMediaSection>
+                    {mediaSection}
+                </StyledMediaSection>
+
+            </StyledContainer>
         )
     }
 }

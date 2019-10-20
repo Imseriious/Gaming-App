@@ -5,11 +5,12 @@ export const StyledBoxArtSection = styled.div`
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px grey;
     padding: 10px;
-    max-width: 350px;
+    min-width: 320px;
+    max-height: 530px;
 `;
 
 export const StyledBoxArt = styled.img`
-    width: 300px;
+    width: 280px;
     margin: 0px;
 `;
 
