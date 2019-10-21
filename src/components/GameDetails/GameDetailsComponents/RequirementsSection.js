@@ -2,22 +2,63 @@ import React, { Component } from 'react';
 //Styles:
 import {
     StyledContainer,
-    StyledTitle
-} from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledRequirementsSection'; 
- 
+    StyledTitle,
+    StyledNoRequirements,
+    StyledRequirements,
+    StyledRequirement,
+    StyledReq,
+    StyledRequirementTitle,
+    StyledReqData
+} from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledRequirementsSection';
+
 class RequirementsSection extends Component {
-    render(){
+    render() {
         console.log(this.props.requirements)
-        return(
-            <StyledContainer>
+        let requirements;
+        if (this.props.requirements[0] !== undefined) {
+            requirements = <>
                 <StyledTitle>Requirements:</StyledTitle>
-                <p>Min CPU: {this.props.requirements[0].min_cpu}</p>
-                <p>Rec CPU: {this.props.requirements[0].rec_cpu}</p>
-                <p>Min GPU: {this.props.requirements[0].min_graphics}</p>
-                <p>Rec GPU: {this.props.requirements[0].rec_graphics}</p>
-                <p>Min Memory: {this.props.requirements[0].min_memory} GB</p>
-                <p>Rec Memory: {this.props.requirements[0].rec_memory} GB</p>
+                <StyledRequirements>
+                    <StyledRequirement>
+                        <StyledRequirementTitle>CPU:</StyledRequirementTitle>
+                            <StyledReq>Minimum 
+                                <StyledReqData>{this.props.requirements[0].min_cpu}</StyledReqData>
+                        </StyledReq>
+                            <StyledReq>Recommended 
+                                <StyledReqData>{this.props.requirements[0].rec_cpu}</StyledReqData>
+                        </StyledReq>
+                    </StyledRequirement>
+                    <StyledRequirement>
+                        <StyledRequirementTitle>GPU:</StyledRequirementTitle>
+                        <StyledReq>Minimum
+                            <StyledReqData>{this.props.requirements[0].min_graphics}</StyledReqData>
+                        </StyledReq>
+                        <StyledReq>Recommended 
+                            <StyledReqData>{this.props.requirements[0].rec_graphics}</StyledReqData>
+                        </StyledReq>
+                    </StyledRequirement>
+                    <StyledRequirement>
+                        <StyledRequirementTitle>MEMORY:</StyledRequirementTitle>
+                        <StyledReq>Minimum
+                                <StyledReqData>{this.props.requirements[0].min_memory}GB</StyledReqData>
+                        </StyledReq>
+                        <StyledReq>Recommended
+                            <StyledReqData>{this.props.requirements[0].rec_memory}GB</StyledReqData>
+                        </StyledReq>
+                    </StyledRequirement>
+                </StyledRequirements>
+            </>
+
+        } else if (this.props.requirements[0] === undefined) {
+            requirements =
+                <StyledNoRequirements>No hardware requirements found</StyledNoRequirements>
+
+        }
+        return (
+            <StyledContainer>
+                {requirements}
             </StyledContainer>
+
         )
     }
 }

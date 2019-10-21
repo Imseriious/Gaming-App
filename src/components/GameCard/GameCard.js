@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 import {
     StyledGameCard,
     StyledHoursViewed,
-    StyledBoxArt
+    StyledBoxArt,
+    StyledBasicInfo,
+    StyledTitle
 } from '../StyledComponents/GameCard/StyledGameCard';
 
 //Component:
@@ -14,20 +16,22 @@ class GameCard extends Component {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
 
         let hoursViewed = null;
-        
-        
-        if(this.props.hoursViewed) {
+
+
+        if (this.props.hoursViewed) {
             let totalHours = this.props.hoursViewed.toFixed(0)
-            hoursViewed = <StyledHoursViewed>Total Hours Wached: {totalHours}</StyledHoursViewed>
+            hoursViewed = <StyledHoursViewed>Total Hours Wached: {totalHours.slice(0, 2)}M</StyledHoursViewed>
         }
-        
+
         return (
             <StyledGameCard>
                 <Link to={`/game/${this.props.title}`}>
-                    <StyledBoxArt src={boxart}/>
+                    <StyledBoxArt src={boxart} />
                 </Link>
-                {hoursViewed} 
-            
+                <StyledBasicInfo>
+                    <StyledTitle>{this.props.title}</StyledTitle>
+                    {hoursViewed}
+                </StyledBasicInfo>
             </StyledGameCard>
         )
 

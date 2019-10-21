@@ -48,12 +48,14 @@ class TopPCRanking extends Component {
         }
 
         return (
+            <>
+            <StyledTitle>Top PC Games</StyledTitle>
             <StyledContainer>
-                <StyledTitle>Top PC Games</StyledTitle>
                 <StyledListOfGames>
                     {listOfGames}
                 </StyledListOfGames>
             </StyledContainer>
+            </>
         )
     }
 

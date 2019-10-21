@@ -11,9 +11,16 @@ export const StyledNavBar = styled.div`
     font-weight: 700;
 `;
 
-export const StyledLogo = styled.img`
+export const StyledLogo = styled.a`
     width: 100px;
+    margin: auto 0px;
 `;
 
-export const StyledLink = styled.a` //REMOVE?
+export const StyledLogoImage = styled.img`
+    /* width: 100px;
+    margin: auto; */
 `;
+
+// export const StyledLink = styled.a` //REMOVE?
+    
+// `;

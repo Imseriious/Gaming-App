@@ -46,12 +46,14 @@ class HoursWatchedRanking extends Component {
         }
 
         return (
+            <>
+            <StyledTitle>Most Viewed Games</StyledTitle>
             <StyledContainer>
-                <StyledTitle>Most Viewed Games</StyledTitle>
                 <StyledListOfGames>
                     {listOfGames}
                 </StyledListOfGames>
             </StyledContainer>
+            </>
         )
     }
 

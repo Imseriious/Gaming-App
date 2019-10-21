@@ -15,7 +15,8 @@ import {
     StyledGameDetails,
     StyledContainer,
     StyledMediaSection,
-    StyledDescriptionsRequirements
+    StyledDescriptionsRequirements,
+    StyledGameName
 } from '../StyledComponents/GameDetails/StyledGameDetails';
 
 //Component:
@@ -50,23 +51,24 @@ class GameDetails extends Component {
 
     render() {
         let gameDetails;
+        let gameName;
         let detailsSection;
         let boxArtSection;
         let descriptionSection;
         let mediaSection;
         let requirementsSection;
 
-        //If statments because I don't know other ways of checking if the state is updated before rendering.
-
         if (this.props.gameDetailsState !== null) {
             gameDetails = this.props.gameDetailsState
             console.log(gameDetails)
         }
         if (gameDetails !== undefined) {
+            //GameName:
+            gameName = <StyledGameName>{gameDetails.name}</StyledGameName>
+
             //BoxArtSection:
             boxArtSection =
-                <BoxArtSection
-                    name={gameDetails.name} />;
+                <BoxArtSection name={gameDetails.name}/>;
             //DetailsSection:
             let gamePublishers = gameDetails.publishers.map(publisher => publisher.name)
             detailsSection =
@@ -84,13 +86,18 @@ class GameDetails extends Component {
                     description={gameDetails.description}
                 />
             //MediaSection:
-            mediaSection = <MediaSection files={gameDetails.media_files} />
+            mediaSection = 
+                <MediaSection 
+                    files={gameDetails.media_files} />
             //RequirementsSection
-            requirementsSection = <RequirementsSection requirements={gameDetails.hardware_requirements} />
+            requirementsSection = 
+                <RequirementsSection 
+                    requirements={gameDetails.hardware_requirements} />
         }
 
         return (
             <StyledContainer >
+                {gameName}
                 <StyledGameDetails>
                     {boxArtSection}
                     {detailsSection}

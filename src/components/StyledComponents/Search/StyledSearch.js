@@ -1,8 +1,20 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form`
+export const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     width: 80%;
     align-self: center;
+    margin-top: -100px;
+    margin-bottom: 100px;
+`;
+
+export const StyledFormContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+export const StyledForm = styled.form`
     display: flex;
     justify-content: center;
 `;
@@ -31,4 +43,23 @@ export const StyledButton = styled.button`
 
 export const StyledSearchButtonIcon = styled.img`
     width: 35px;
+`; 
+
+export const StyledResults = styled.div`
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    overflow-y: scroll;
+    position: absolute;
+    align-self: center;
+    margin:50px auto;
+    padding: 10px;
+    width: 40%;
+    max-height: 400px;
+    box-shadow: black 5px 4px 4px 4px;
+    
+`;
+
+export const StyledNoResults = styled.div`
+    display: none;
 `;
