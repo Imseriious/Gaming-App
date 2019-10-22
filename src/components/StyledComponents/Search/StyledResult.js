@@ -8,8 +8,9 @@ export const StyledResult = styled.div`
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px grey solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     &:hover{
-        background-color: #00a82d;
+        background-color: #D6F9B3;
     }
 `;
 

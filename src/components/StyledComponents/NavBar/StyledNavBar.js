@@ -24,6 +24,12 @@ export const StyledLogoImage = styled.img`
 
 export const StyledSavedGamesLink = styled(Link)`
     align-self: center;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #00a82d;
+    transition-duration: 0.3s;
+    &:hover{
+        color: #0999;
+        transform: scale(1.1);
+    }
 `;

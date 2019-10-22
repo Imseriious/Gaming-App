@@ -8,7 +8,7 @@ import Navbar from './components/NavBar/Navbar';
 import HoursWatchedRanking from './components/Rankings/HoursWatchedRanking/HoursWatchedRanking';
 import TopPCRanking from './components/Rankings/TopPCRanking/TopPCRanking';
 import SavedGames from './components/SavedGames/SavedGames';
-
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
 
@@ -24,6 +24,7 @@ class App extends Component {
         <Route path="/TopPcRanking" component={TopPCRanking} />
         <Route path="/game/:title" exact component={GameDetails} />
         <Route path="/SavedGames" exact component={SavedGames} />
+        <Footer />
       </div>
 
     );

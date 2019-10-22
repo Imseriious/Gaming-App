@@ -44,7 +44,7 @@ export const StyledDeleteGame = styled.button`
 export const StyledBoxArt = styled.img`
     width: 250px;
     border-radius: 10px 10px 0px 0px;
-    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 
@@ -58,6 +58,7 @@ export const StyledBasicInfo = styled.div`
     height: 70px;
     margin-bottom: 10px;
     border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
 
 export const StyledTitle = styled.p`

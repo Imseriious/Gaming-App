@@ -11,6 +11,7 @@ export const StyledListOfGames = styled.div`
     width: 90%;
     margin: auto;
     display: flex;
+    padding-bottom: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -29,6 +30,7 @@ export const StyledTitle = styled.h1`
     margin-top: -50px;
     font-weight: 700;
     color: #00a82d;
+    text-shadow: 1px 1px 1px #000000;
     text-align: center;
     @media only screen and (max-width: 555px){
         margin-top: 0px;

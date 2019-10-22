@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 export const StyledContainer = styled.div`
     width: 100%;
     margin: 10px auto;
-    padding: 20px;
+    padding: 40px 0;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
@@ -25,8 +25,9 @@ export const StyledListInfo = styled.div`
 
 export const StyledTitle = styled.h1`
     text-align: left;
-    font-weight: 500;
+    font-weight: 400;
     color: #00a82d;
+    text-shadow: 1px 1px 1px #000000;
     @media only screen and (max-width: 555px) {
         transform: scale(0.8);
     }
@@ -39,8 +40,10 @@ export const StyledSeeMoreLink = styled(Link)`
     color: #00a82d;
     font-size: 1.3rem;
     align-self: center;
+    transition-duration: 0.3s;
     &:hover {
       text-decoration: underline;
+      transform: scale(0.9)
     }
 `
 

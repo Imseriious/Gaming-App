@@ -33,6 +33,10 @@ export const StyledInput = styled.input`
     height: 35px;
     border: 1px #D2D2D2 solid;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(160, 251, 70, 0.6), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    }
 `;
 
 export const StyledButton = styled.button`
@@ -65,8 +69,9 @@ export const StyledResults = styled.div`
     padding: 10px;
     width: 40%;
     max-height: 400px;
-    box-shadow: black 5px 4px 4px 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     z-index: 9999;
+    
     @media only screen and (max-width: 1300px){
         width: 60%;
     }
