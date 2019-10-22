@@ -16,7 +16,9 @@ import {
     StyledContainer,
     StyledMediaSection,
     StyledDescriptionsRequirements,
-    StyledGameName
+    StyledGameName,
+    StyledMediaSectionTitle,
+    StyledBoxArtDetails
 } from '../StyledComponents/GameDetails/StyledGameDetails';
 
 //Component:
@@ -99,19 +101,19 @@ class GameDetails extends Component {
             <StyledContainer >
                 {gameName}
                 <StyledGameDetails>
+                    <StyledBoxArtDetails>
                     {boxArtSection}
                     {detailsSection}
+                    </StyledBoxArtDetails>
                     <StyledDescriptionsRequirements>
                         {descriptionSection}
                         {requirementsSection}
                     </StyledDescriptionsRequirements>
-
                 </StyledGameDetails>
-
                 <StyledMediaSection>
+                    <StyledMediaSectionTitle>Media</StyledMediaSectionTitle>
                     {mediaSection}
                 </StyledMediaSection>
-
             </StyledContainer>
         )
     }

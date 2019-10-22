@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+//React-Redux
+import { connect } from 'react-redux';
+import * as actionType from '../../store/actions';
 //Router
 import { Link } from 'react-router-dom';
 //Styles
@@ -7,16 +10,65 @@ import {
     StyledHoursViewed,
     StyledBoxArt,
     StyledBasicInfo,
-    StyledTitle
+    StyledTitle,
+    StyledSaveGame,
+    StyledDeleteGame
 } from '../StyledComponents/GameCard/StyledGameCard';
 
 //Component:
 class GameCard extends Component {
+
+    deleteGame = () => {
+        let gameName = this.props.title;
+        this.props.deleteGame(gameName)
+        console.log(this.props.savedGamesState)
+
+    }
+
+    saveGame = () => { //"Homemade" way of saving the game
+        let gameName = this.props.title;
+
+        if (this.props.listOfGamesState !== null) { //Check in the list of TOP Rankings
+            this.props.listOfGamesState.map(game => {
+                if (game.title === gameName) {
+                    this.props.saveGame(game)
+                    //console.log(this.props.savedGames)
+                }
+            })
+        } else if (this.props.listOfGamesState2 !== null) { //Check in the list of Most Viewed Ranking
+            this.props.listOfGamesState2.map(game => {
+                if (game.game == gameName) {
+                    this.props.saveGame(game)
+                    //console.log(game)
+                }
+            })
+        } else if (this.props.listOfGamesState3 !== null) { //Check top 5 pc in homepage
+            this.props.listOfGamesState3.map(game => {
+                if (game.title == gameName) {
+                    this.props.saveGame(game)
+                    //console.log(game)
+                }
+            })
+        } else if (this.props.listOfGamesState4 !== null) { //Check top 5 viewed in homepage
+            this.props.listOfGamesState4.map(game => {
+                if (game.game == gameName) {
+                    this.props.saveGame(game)
+                    //console.log(game)
+                }
+            })
+        }
+
+    }
+
     render() {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
+        let saveGame = <StyledSaveGame onClick={this.saveGame}>🔖</StyledSaveGame>;
+
+        if(this.props.saved === true) {
+            saveGame = <StyledDeleteGame onClick={this.deleteGame}>X</StyledDeleteGame>;
+        }
 
         let hoursViewed = null;
-
 
         if (this.props.hoursViewed) {
             let totalHours = this.props.hoursViewed.toFixed(0)
@@ -25,6 +77,7 @@ class GameCard extends Component {
 
         return (
             <StyledGameCard>
+                {saveGame}
                 <Link to={`/game/${this.props.title}`}>
                     <StyledBoxArt src={boxart} />
                 </Link>
@@ -38,4 +91,22 @@ class GameCard extends Component {
     }
 }
 
-export default GameCard;
+//React-Redux
+const mapStateToProps = state => {
+    return {
+        listOfGamesState: state.topPCRanking,
+        listOfGamesState2: state.hoursWatchedRanking,
+        listOfGamesState3: state.top5PC,
+        listOfGamesState4: state.top5HoursWatched,
+        savedGamesState: state.savedGames
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        saveGame: (res) => dispatch({ type: actionType.SAVE_GAME, payload: res }),
+        deleteGame: (res) => dispatch({type: actionType.DELETE_GAME, payload: res})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameCard);

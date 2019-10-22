@@ -2,10 +2,49 @@ import styled from 'styled-components';
 
 export const StyledGameCard = styled.div`
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.2s;
+    &:hover{
+        transform: scale(1.1)
+    }
+    @media only screen and (max-width: 1450px) {
+        transform: scale(0.9)
+    }
+
+    @media only screen and (max-width: 555px) {
+        transform: scale(1.1);
+        margin-top: 50px;
+    }
+    
+`;
+
+export const StyledSaveGame = styled.button`
+    all:unset;
+    font-size: 1.4rem;
+    width: 30px;
+    transition-duration: 0.2s;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.4)
+    }
+`;
+
+export const StyledDeleteGame = styled.button`
+    all:unset;
+    font-size: 1.4rem;
+    width: 30px;
+    transition-duration: 0.2s;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.4)
+    }
 `;
 
 export const StyledBoxArt = styled.img`
     width: 250px;
+    border-radius: 10px 10px 0px 0px;
+    
 `;
 
 

@@ -6,7 +6,8 @@ const initialState = {
     hoursWatchedRanking: null,
     topPCRanking: null,
     gameId: null,
-    gameDetails: null
+    gameDetails: null,
+    savedGames : []
 }
 
 const reducer = (state = initialState, action) => {
@@ -46,6 +47,17 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 gameDetails: gameDetails
+            }
+        case actionTypes.SAVE_GAME:
+            return{
+                ...state,
+                savedGames : [...state.savedGames, action.payload]
+            }
+        case actionTypes.DELETE_GAME:
+            let newSavedGames = [...state.savedGames.splice(state.savedGames.findIndex(e => e.title === action.payload),1)]
+            return{
+                ...state,
+                savedGames : newSavedGames
             }
         default:
             return state;

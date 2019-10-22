@@ -10,7 +10,7 @@ import GameCard from '../../GameCard/GameCard';
 import {
     StyledContainer,
     StyledListOfGames,
-    StyledSeeMoreButton,
+    StyledSeeMoreLink,
     StyledTitle,
     StyledListInfo
 } from '../../StyledComponents/HomePage/StyledContainers/StyledContainers';
@@ -52,9 +52,8 @@ class Top5PC extends Component {
             <StyledContainer>
                 <StyledListInfo>
                     <StyledTitle>Top PC Games</StyledTitle>
-                    <StyledSeeMoreButton href="/TopPcRanking" >See more...</StyledSeeMoreButton>
+                    <StyledSeeMoreLink to="/TopPcRanking" >See more...</StyledSeeMoreLink>
                 </StyledListInfo>
-
                 <StyledListOfGames>
                     {listOfGames}
                 </StyledListOfGames>

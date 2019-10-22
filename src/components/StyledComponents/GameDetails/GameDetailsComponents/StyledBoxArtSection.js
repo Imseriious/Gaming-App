@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledBoxArtSection = styled.div`
-    
+    @media only screen and (max-width: 714px) {
+        transform: scale(0.8)
+    }
 `;
 
 export const StyledBoxArt = styled.img`
@@ -14,3 +16,4 @@ export const StyledBoxArt = styled.img`
     min-width: 320px;
     max-height: 530px;
 `;
+ 

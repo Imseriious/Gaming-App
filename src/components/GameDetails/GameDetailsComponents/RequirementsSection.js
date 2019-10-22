@@ -11,20 +11,21 @@ import {
     StyledReqData
 } from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledRequirementsSection';
 
+//Component: 
 class RequirementsSection extends Component {
     render() {
         console.log(this.props.requirements)
         let requirements;
-        if (this.props.requirements[0] !== undefined) {
+        if (this.props.requirements[0] !== undefined) { //This could be improved:
             requirements = <>
                 <StyledTitle>Requirements:</StyledTitle>
                 <StyledRequirements>
                     <StyledRequirement>
                         <StyledRequirementTitle>CPU:</StyledRequirementTitle>
-                            <StyledReq>Minimum 
+                        <StyledReq>Minimum
                                 <StyledReqData>{this.props.requirements[0].min_cpu}</StyledReqData>
                         </StyledReq>
-                            <StyledReq>Recommended 
+                        <StyledReq>Recommended
                                 <StyledReqData>{this.props.requirements[0].rec_cpu}</StyledReqData>
                         </StyledReq>
                     </StyledRequirement>
@@ -33,7 +34,7 @@ class RequirementsSection extends Component {
                         <StyledReq>Minimum
                             <StyledReqData>{this.props.requirements[0].min_graphics}</StyledReqData>
                         </StyledReq>
-                        <StyledReq>Recommended 
+                        <StyledReq>Recommended
                             <StyledReqData>{this.props.requirements[0].rec_graphics}</StyledReqData>
                         </StyledReq>
                     </StyledRequirement>

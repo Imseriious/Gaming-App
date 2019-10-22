@@ -10,7 +10,7 @@ import GameCard from '../../GameCard/GameCard';
 import {
     StyledContainer,
     StyledListOfGames,
-    StyledSeeMoreButton,
+    StyledSeeMoreLink,
     StyledTitle,
     StyledListInfo
 } from '../../StyledComponents/HomePage/StyledContainers/StyledContainers';
@@ -51,7 +51,7 @@ class Top5HoursWatched extends Component {
             <StyledContainer>
                 <StyledListInfo >
                     <StyledTitle>Most Viewed Games</StyledTitle>
-                    <StyledSeeMoreButton href="/HoursWatchedRanking" >See more...</StyledSeeMoreButton>
+                    <StyledSeeMoreLink to="/HoursWatchedRanking" >See more...</StyledSeeMoreLink>
                 </StyledListInfo>
                 <StyledListOfGames>
                     {listOfGames}

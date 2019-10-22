@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link } from 'react-router-dom';
 
 export const StyledContainer = styled.div`
     display: flex;
@@ -7,6 +8,9 @@ export const StyledContainer = styled.div`
     align-self: center;
     margin-top: -100px;
     margin-bottom: 100px;
+    @media only screen and (max-width: 650px){
+        margin-top: 0px;
+    }
 `;
 
 export const StyledFormContainer = styled.div`
@@ -45,6 +49,11 @@ export const StyledSearchButtonIcon = styled.img`
     width: 35px;
 `; 
 
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: black;
+`;
+
 export const StyledResults = styled.div`
     display: flex;
     background-color: white;
@@ -57,6 +66,13 @@ export const StyledResults = styled.div`
     width: 40%;
     max-height: 400px;
     box-shadow: black 5px 4px 4px 4px;
+    z-index: 9999;
+    @media only screen and (max-width: 1300px){
+        width: 60%;
+    }
+    @media only screen and (max-width: 1300px){
+        width: 90%;
+    }
     
 `;
 

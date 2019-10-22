@@ -14,7 +14,13 @@ export const StyledListOfGames = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-
+    @media only screen and (max-width: 555px){
+        justify-content: center;
+    }
+    @media only screen and (max-width: 834px){
+        justify-content: space-evenly;
+    }
+    
 `;
 
 export const StyledTitle = styled.h1`
@@ -24,5 +30,7 @@ export const StyledTitle = styled.h1`
     font-weight: 700;
     color: #00a82d;
     text-align: center;
-
+    @media only screen and (max-width: 555px){
+        margin-top: 0px;
+    }
 `

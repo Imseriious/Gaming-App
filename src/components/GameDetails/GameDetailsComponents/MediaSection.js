@@ -7,10 +7,10 @@ import {
     StyledVideos,
     StyledImages,
     StyledTitle,
-    StyledVideo
+    StyledVideo,
+    StyledImageLink
 
 } from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledMedia';
-
 //Component:
 class MediaSection extends Component {
     render() {
@@ -22,14 +22,18 @@ class MediaSection extends Component {
         images = mediaFiles.map(file => {
             if (file.type === "image") {
                 return (
-                    <StyledImage
-                        key={file.id}
-                        src={file.url}
-                        onerror={{ display: "none" }} />
+                    <StyledImageLink target="_blank" href={file.url}>
+                        <StyledImage
+                            key={file.id}
+                            src={file.url}
+                            onerror={{ display: "none" }} />
+                    </StyledImageLink>
                 )
+            } else {
+                return (images = null)
             }
         })
-        
+
         //Video Confing:
         const opts = {
             width: '500px;',

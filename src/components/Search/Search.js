@@ -6,21 +6,16 @@ import SearchResult from './Results';
 //Axios:
 import axios from 'axios';
 import { headers, getGameIDUrl } from '../../axios/axios';
-//Assets:
-import Searchicon from '../../assets/search.svg';
+
 //Styles:
 import {
     StyledForm,
     StyledInput,
-    StyledButton,
-    StyledSearchButtonIcon,
     StyledFormContainer,
     StyledResults,
-    StyledContainer
+    StyledContainer,
+    StyledLink
 } from '../StyledComponents/Search/StyledSearch';
-
-
-
 
 //Component:
 class Search extends Component {
@@ -44,10 +39,7 @@ class Search extends Component {
 
 
     }
-
-    cleanSearch = () => {
-        this.setState({ results: null })
-    }
+ 
 
     render() {
         let showResults;
@@ -59,11 +51,11 @@ class Search extends Component {
                 showResults = null;
             } else {
                 let results = this.state.results.map(result => (
-                    <Link to={`/game/${result.name}`}>
+                    <StyledLink to={`/game/${result.name}`}> 
                         <SearchResult
                             name={result.name}
                         />
-                    </Link>)
+                    </StyledLink>)
                 )
 
                 showResults = <StyledResults>{results}</StyledResults>
@@ -76,14 +68,10 @@ class Search extends Component {
                         <StyledInput
                             type="text"
                             placeholder="Search Game..."
-                            onChange={this.findGames}
-                            cleanSearch={this.cleanSearch} />
-        
-
+                            onChange={this.findGames} /> 
                     </StyledForm>
                 </StyledFormContainer>
                 {showResults}
-
             </StyledContainer>
         )
     }

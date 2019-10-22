@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledResult = styled.div`
+
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -14,7 +15,10 @@ export const StyledResult = styled.div`
 
 export const StyledBoxArt = styled.img`
     width: 90px;
-
+    @media only screen and (max-width: 555px){
+        display: none;
+    }
+    
 `;
 
 
@@ -22,4 +26,7 @@ export const StyledName = styled.p`
     align-self: center;
     margin-left: 30px;
     font-size: 24px;
+    @media only screen and (max-width: 555px){
+        font-size: 14px;
+    }
 `;

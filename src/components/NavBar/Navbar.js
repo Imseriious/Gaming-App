@@ -1,16 +1,12 @@
 import React from 'react';
-//Router:
-import {Link} from 'react-router-dom';
-//Components: 
-
-import NightMode from '../NightMode/NightMode';
 //Assets:
 import Logo from '../../assets/newzoo-logo.svg';
 //Styles:
 import {
     StyledNavBar,
-    StyledLogo,
-    StyledLogoImage
+    StyledLogoLink,
+    StyledLogoImage,
+    StyledSavedGamesLink
 } from '../StyledComponents/NavBar/StyledNavBar';
 
 //Component: 
@@ -18,10 +14,10 @@ const Navbar = () => {
     
     return (
         <StyledNavBar>
-            <StyledLogo href="/"><StyledLogoImage  src={Logo}/></StyledLogo>
-            <NightMode />
+            <StyledLogoLink to="/"><StyledLogoImage  src={Logo}/></StyledLogoLink>
+            <StyledSavedGamesLink to="/SavedGames">Saved Games🔖</StyledSavedGamesLink>
         </StyledNavBar>
     )
 }
 
-export default Navbar; //ADD ROUTER LINK
+export default Navbar;

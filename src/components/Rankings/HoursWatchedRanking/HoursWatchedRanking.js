@@ -22,7 +22,6 @@ class HoursWatchedRanking extends Component {
     getTopPcRanking() {
         axios.get(mostWatchedGamesRankingUrl, headers)
             .then((res) => {
-                console.log(res.data.data)
                 this.props.hoursWatchedRanking(res)
                 
             })

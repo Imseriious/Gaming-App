@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-//Router:
-import { Link, Route } from 'react-router-dom';
-
 //Styles:
 import {
     StyledResult,
@@ -20,7 +17,6 @@ class Results extends Component {
                     <StyledName>{this.props.name}</StyledName>
             </StyledResult>
         )
-        
     }
 }
 

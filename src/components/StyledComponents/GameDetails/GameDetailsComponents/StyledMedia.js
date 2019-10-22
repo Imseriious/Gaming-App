@@ -18,16 +18,28 @@ export const StyledTitle = styled.h2`
 export const StyledImages = styled.div`
     display: flex;
     justify-content: space-between;
-    height: 250px;
+    align-items: center;
+    height: 300px;
     margin-bottom: 20px;
     overflow-x: scroll;
 `;
 
 export const StyledImage = styled.img`
-    width: 500px;
+    width: 400px;
+    height: 200px;
     margin: 0px 20px;
     border-radius: 10px;
 `;
+
+export const StyledImageLink = styled.a`
+    height: 250px;
+    margin-bottom: 0px;
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+`;
+
 
 export const StyledVideos = styled.div`
    display: flex;
