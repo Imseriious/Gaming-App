@@ -7,7 +7,8 @@ import GameCard from '../GameCard/GameCard';
 import {
     StyledTitle,
     StyledContainer,
-    StyledNotSavedGames
+    StyledNotSavedGames,
+    StyledMainContainer
 
 } from '../StyledComponents/SavedGames/SavedGames';
 
@@ -38,12 +39,12 @@ class SavedGames extends Component {
         } 
 
         return (
-            <>
+            <StyledMainContainer>
                 <StyledTitle>Saved Games</StyledTitle>
                 <StyledContainer>
                     {SavedGamesList}
                 </StyledContainer>
-            </>
+            </StyledMainContainer>
         )
     }
 }

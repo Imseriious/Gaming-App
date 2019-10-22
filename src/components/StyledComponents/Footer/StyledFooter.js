@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 export const StyledContainer = styled.div`
     height: 50px;
+    bottom: 0px;
     background-color: grey;
     margin-top: -10px;
     padding: 10px;
@@ -13,7 +14,7 @@ export const StyledContainer = styled.div`
         flex-direction: column;
         justify-content: space-around;
         height: 100px;
-    }
+    } 
 `;
 
 export const StyledLink = styled(Link)`
