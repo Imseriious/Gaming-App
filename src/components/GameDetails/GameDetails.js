@@ -66,7 +66,7 @@ class GameDetails extends Component {
         }
         if (gameDetails !== undefined) {
             //GameName:
-            gameName = <StyledGameName>{gameDetails.name}</StyledGameName>
+            gameName = <StyledGameName>🎮{gameDetails.name}</StyledGameName>
 
             //BoxArtSection:
             boxArtSection =
@@ -111,7 +111,7 @@ class GameDetails extends Component {
                     </StyledDescriptionsRequirements>
                 </StyledGameDetails>
                 <StyledMediaSection>
-                    <StyledMediaSectionTitle>Media</StyledMediaSectionTitle>
+                    <StyledMediaSectionTitle>Media📷</StyledMediaSectionTitle>
                     {mediaSection}
                 </StyledMediaSection>
             </StyledContainer>

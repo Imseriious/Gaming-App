@@ -40,7 +40,7 @@ class SavedGames extends Component {
 
         return (
             <StyledMainContainer>
-                <StyledTitle>Saved Games</StyledTitle>
+                <StyledTitle>Saved Games🔖</StyledTitle>
                 <StyledContainer>
                     {SavedGamesList}
                 </StyledContainer>

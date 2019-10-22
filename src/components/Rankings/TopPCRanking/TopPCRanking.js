@@ -49,7 +49,7 @@ class TopPCRanking extends Component {
 
         return (
             <>
-            <StyledTitle>Top PC Games</StyledTitle>
+            <StyledTitle>Top PC Games🖱️</StyledTitle>
             <StyledContainer>
                 <StyledListOfGames>
                     {listOfGames}

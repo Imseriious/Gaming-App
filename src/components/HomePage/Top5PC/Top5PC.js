@@ -46,12 +46,12 @@ class Top5PC extends Component {
             ))
 
         }
-
+        
         return (
 
             <StyledContainer>
                 <StyledListInfo>
-                    <StyledTitle>Top PC Games</StyledTitle>
+                    <StyledTitle>Top PC Games🖱️</StyledTitle>
                     <StyledSeeMoreLink to="/TopPcRanking" >See more...</StyledSeeMoreLink>
                 </StyledListInfo>
                 <StyledListOfGames>

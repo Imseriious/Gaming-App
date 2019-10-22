@@ -46,7 +46,7 @@ class HoursWatchedRanking extends Component {
 
         return (
             <>
-            <StyledTitle>Most Viewed Games</StyledTitle>
+            <StyledTitle>Most Viewed Games👀</StyledTitle>
             <StyledContainer>
                 <StyledListOfGames>
                     {listOfGames}

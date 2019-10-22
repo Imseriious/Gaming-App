@@ -50,7 +50,7 @@ class Top5HoursWatched extends Component {
         return (
             <StyledContainer>
                 <StyledListInfo >
-                    <StyledTitle>Most Viewed Games</StyledTitle>
+                    <StyledTitle>Most Viewed Games👀</StyledTitle>
                     <StyledSeeMoreLink to="/HoursWatchedRanking" >See more...</StyledSeeMoreLink>
                 </StyledListInfo>
                 <StyledListOfGames>

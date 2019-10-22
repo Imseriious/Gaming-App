@@ -7,9 +7,9 @@ import {
 const Footer = () => {
     return(
         <StyledContainer>
-            <StyledLink to="/">Home</StyledLink>
-            <StyledLink to="/HoursWatchedRanking">Most Viewed Ranking</StyledLink>
-            <StyledLink to="/TopPcRanking">Top PC Ranking</StyledLink>
+            <StyledLink to="/">Home🏠</StyledLink>
+            <StyledLink to="/HoursWatchedRanking">Most Viewed Ranking👀</StyledLink>
+            <StyledLink to="/TopPcRanking">Top PC Ranking🖱️</StyledLink>
         </StyledContainer>
     )
 }
