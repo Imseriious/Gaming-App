@@ -50,4 +50,10 @@ export const StyledDarkModeButton = styled.button`
     &:hover {
         transform:scale(1.1)
     }
+    @media only screen and (max-width: 650px){
+        transform:scale(0.7);
+        &:hover {
+        transform:scale(0.9)
+    }
+    }
 `;

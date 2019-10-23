@@ -6,7 +6,7 @@ export const StyledContainer = styled.div`
     flex-direction: column;
     width: 80%;
     align-self: center;
-    margin-top: -100px;
+    margin-top: -80px;
     margin-bottom: 100px;
     @media only screen and (max-width: 650px){
         margin-top: 0px;

@@ -15,7 +15,8 @@ import {
     StyledBasicInfo,
     StyledTitle,
     StyledSaveGame,
-    StyledDeleteGame
+    StyledDeleteGame,
+    StyledSaved
 } from '../StyledComponents/GameCard/StyledGameCard';
 
 //Component:
@@ -50,6 +51,13 @@ class GameCard extends Component {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
 
         let saveGame = <StyledSaveGame onClick={this.getGame}>🔖</StyledSaveGame>; //This will save the game (Needs adjustments)
+        if(this.props.savedGamesState) {
+            this.props.savedGamesState.map(game => {
+                if(game.name === this.props.title){
+                    saveGame = <StyledSaved>Saved!</StyledSaved>
+                }
+            })
+        }
 
         if(this.props.saved === true) { //If the game is saved replace with X icon
             saveGame = <StyledDeleteGame onClick={this.deleteGame}>X</StyledDeleteGame>;

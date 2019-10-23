@@ -19,7 +19,7 @@ export const StyledGameCard = styled.div`
     }
     
 `;
- 
+
 export const StyledSaveGame = styled.button`
     all:unset;
     font-size: 1.4rem;
@@ -30,19 +30,37 @@ export const StyledSaveGame = styled.button`
         transform: scale(1.4)
     }
 `;
-
 export const StyledDeleteGame = styled.button`
-    all:unset;
-    font-size: 1.4rem;
-    width: 30px;
-    transition-duration: 0.2s;
-    color: ${props =>
-    props.theme.mode === 'dark' ? 'white' : 'black'};
+    background-color : salmon;
+    cursor: pointer;
+    width: 70px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -20px;
+    padding-left: 5px;
+    font-size: 18px; 
+    text-align: left;
+    color: white;
+    font-weight: 300;
     &:hover{
-        cursor: pointer;
-        transform: scale(1.4)
+         cursor: pointer;
+         margin-bottom: -10px;
     }
 `;
+
+
+// export const StyledDeleteGame = styled.button`
+//     all:unset;
+//     font-size: 1.4rem;
+//     width: 30px;
+//     transition-duration: 0.2s;
+//     color: ${props =>
+//     props.theme.mode === 'dark' ? 'white' : 'black'};
+//     &:hover{
+//         cursor: pointer;
+//         transform: scale(1.4)
+//     }
+// `;
 
 export const StyledBoxArt = styled.img`
     width: 250px;
@@ -58,7 +76,7 @@ export const StyledBasicInfo = styled.div`
     padding-top: 5px;
     margin-top: -5px;
     background-color: ${props =>
-    props.theme.mode === 'dark' ? 'black' : 'white'};
+        props.theme.mode === 'dark' ? 'black' : 'white'};
     height: 70px;
     margin-bottom: 10px;
     border-radius: 0px 0px 10px 10px;
@@ -71,7 +89,7 @@ export const StyledTitle = styled.p`
     max-width: 250px;
     font-weight: 700;
     color: ${props =>
-    props.theme.mode === 'dark' ? 'white' : 'black'};
+        props.theme.mode === 'dark' ? 'white' : 'black'};
 `;
 
 
@@ -80,7 +98,19 @@ export const StyledHoursViewed = styled.p`
     text-decoration: none;
     margin-top: 0px;
     color: ${props =>
-    props.theme.mode === 'dark' ? 'white' : 'black'};
+        props.theme.mode === 'dark' ? 'white' : 'black'};
 `;
 
+export const StyledSaved = styled.p`
+    background-color : #00a82d;
+    width: 70px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: -20px;
+    padding-left: 5px;
+    font-size: 18px; 
+    text-align: left;
+    color: white;
+    font-weight: 300;
+`;
 
