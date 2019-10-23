@@ -21,14 +21,11 @@ import {
 
 //Component:
 class GameCard extends Component {
-    state={
-        gameId: null
-    }
+   
 
     deleteGame = () => {
-        let gameName = this.props.title;
+        let gameName = this.props.title
         this.props.deleteGame(gameName)
-
     }
 
     getGame = () => { //Geting Game ID

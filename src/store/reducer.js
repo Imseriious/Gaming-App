@@ -62,7 +62,7 @@ const reducer = (state = initialState, action) => {
                 ...state.savedGames
             ];
             updatedGames.splice(
-                updatedGames.findIndex(e => e.title === action.payload),
+                updatedGames.findIndex(e => e.name === action.payload),
                 1
             )
             return {
