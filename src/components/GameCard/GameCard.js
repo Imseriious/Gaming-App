@@ -27,6 +27,7 @@ class GameCard extends Component {
 
     saveGame = () => { //"Homemade" way of saving the game
         let gameName = this.props.title; 
+        //console.log(this.props.title)
 
         if (this.props.listOfGamesState !== null) { //Check in the list of TOP Rankings
             this.props.listOfGamesState.map(game => {

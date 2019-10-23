@@ -49,20 +49,29 @@ const reducer = (state = initialState, action) => {
                 gameDetails: gameDetails
             }
         case actionTypes.SAVE_GAME:
-            return{
-                ...state,
-                savedGames : [...state.savedGames, action.payload]
-            }
-        case actionTypes.DELETE_GAME:
-            let newSavedGames = [...state.savedGames.splice(state.savedGames.findIndex(e => e.title === action.payload),1)]
+            let newSavedGames = [...state.savedGames, action.payload]
             return{
                 ...state,
                 savedGames : newSavedGames
+            }
+        case actionTypes.DELETE_GAME:
+            let updatedGames = [
+                ...state.savedGames
+              ];
+              updatedGames.splice(
+                updatedGames.findIndex(e => e.title === action.payload),
+                1
+            )
+            return{
+                ...state,
+                savedGames : updatedGames
             }
         default:
             return state;
     }
     
 };
+
+
 
 export default reducer;
