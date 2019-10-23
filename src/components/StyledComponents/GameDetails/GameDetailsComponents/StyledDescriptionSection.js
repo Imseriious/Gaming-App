@@ -7,7 +7,7 @@ export const StyledContainer = styled.div`
 
 export const StyledDescriptionSection = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 0 0 0 10px;
+    border-radius: 10px 0 0 10px;
 `;
 
 export const StyledDescription = styled.p`
@@ -15,7 +15,7 @@ export const StyledDescription = styled.p`
     overflow-y: scroll;
     border-bottom: 0.2px grey solid;
     border-left: 0.2px grey solid;
-    border-radius: 0 0 0 10px;
+    border-radius: 10px 0 0 10px;
     text-align: left;
     padding: 0 20px;
     line-height: 25px;
