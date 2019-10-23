@@ -16,9 +16,7 @@ import {
 //Component:
 class SavedGames extends Component {
 
-    componentDidMount(){
-        console.log(this.props.savedGamesState)
-    }
+    
 
     render() {
         let SavedGamesList = <h1>Loading...</h1>
@@ -30,8 +28,8 @@ class SavedGames extends Component {
         if (this.props.savedGamesState.length >= 1) {
             SavedGamesList = this.props.savedGamesState.map(game => (
                 <GameCard
-                    key={game.game}
-                    title={game.title}
+                    key={game.id}
+                    title={game.name}
                     hoursViewed={game.hours_viewed}
                     saved={true}
                 />

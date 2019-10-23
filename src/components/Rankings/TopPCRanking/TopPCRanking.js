@@ -24,7 +24,6 @@ class TopPCRanking extends Component {
 
         axios.get(topPCRankingUrl, headers)
             .then((res) => {
-                console.log(res.data.data)
                 this.props.topPCRanking(res)
                 
             })

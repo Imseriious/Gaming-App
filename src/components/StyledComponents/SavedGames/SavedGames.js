@@ -23,10 +23,13 @@ export const StyledNotSavedGames = styled.h1`
     font-weight: 500;
     border-bottom: 0.5px black solid;
     width: 50%;
-    margin: 100px auto;
-    padding-bottom: 20px;
+    margin: 220px auto;
+    padding-bottom: 30px;
+    
+    
 `;
 
 export const StyledMainContainer = styled.div`
-    height: 100vh;
+ 
+
 `;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 //Router:
-import {Link} from 'react-router-dom';
 //Components:
 import SearchResult from './Results';
 //Axios:
@@ -51,7 +50,7 @@ class Search extends Component {
                 showResults = null;
             } else {
                 let results = this.state.results.map(result => (
-                    <StyledLink to={`/game/${result.name}`}> 
+                    <StyledLink key={result.name} to={`/game/${result.name}`}> 
                         <SearchResult
                             name={result.name}
                         />

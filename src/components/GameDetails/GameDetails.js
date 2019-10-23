@@ -62,7 +62,6 @@ class GameDetails extends Component {
 
         if (this.props.gameDetailsState !== null) {
             gameDetails = this.props.gameDetailsState
-            console.log(gameDetails)
         }
         if (gameDetails !== undefined) {
             //GameName:

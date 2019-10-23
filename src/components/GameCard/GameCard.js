@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-//React-Redux
+//React-Redux:
 import { connect } from 'react-redux';
 import * as actionType from '../../store/actions';
-//Router
+//Axios:
+import axios from 'axios';
+import { headers, getGameIDUrl } from '../../axios/axios';
+//Router:
 import { Link } from 'react-router-dom';
-//Styles
+//Styles:
 import {
     StyledGameCard,
     StyledHoursViewed,
@@ -17,53 +20,36 @@ import {
 
 //Component:
 class GameCard extends Component {
+    state={
+        gameId: null
+    }
 
-    deleteGame = () => { //Needs adjustments
+    deleteGame = () => {
         let gameName = this.props.title;
         this.props.deleteGame(gameName)
-        console.log(this.props.savedGamesState)
 
     }
 
-    saveGame = () => { //"Homemade" way of saving the game
-        let gameName = this.props.title; 
-        //console.log(this.props.title)
-
-        if (this.props.listOfGamesState !== null) { //Check in the list of TOP Rankings
-            this.props.listOfGamesState.map(game => {
-                if (game.title === gameName) {
-                    this.props.saveGame(game)
-                   
-                }
-            })
-        } else if (this.props.listOfGamesState2 !== null) { //Check in the list of Most Viewed Ranking
-            this.props.listOfGamesState2.map(game => {
-                if (game.game == gameName) {
-                    this.props.saveGame(game)
-                  
-                }
-            })
-        } else if (this.props.listOfGamesState3 !== null) { //Check top 5 pc in homepage
-            this.props.listOfGamesState3.map(game => {
-                if (game.title == gameName) {
-                    this.props.saveGame(game)
-       
-                }
-            })
-        } else if (this.props.listOfGamesState4 !== null) { //Check top 5 viewed in homepage
-            this.props.listOfGamesState4.map(game => {
-                if (game.game == gameName) {
-                    this.props.saveGame(game)
-      
-                }
-            })
+    getGame = () => { //Geting Game ID
+        let body = {
+            "search_text": `${this.props.title}`, "fields": ["id", "name", "release_dates"]
         }
-
+        
+        axios.post(getGameIDUrl, body, headers)
+            .then(res => res.data.filter((result) => { return result.type === "game" }))
+            .then(res => this.saveGame(res[0].id))
+    
+}
+    saveGame = (game_id) => { //Saving the game based on the ID
+        let API_URL = `https://api.newzoo.com/v1.0/metadata/game/${game_id}?__permission_set=Explorer%20Games`;
+        axios.get(API_URL, headers)
+            .then(res => this.props.saveGame(res.data))
     }
 
     render() {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
-        let saveGame = <StyledSaveGame onClick={this.saveGame}>🔖</StyledSaveGame>; //This will save the game (Needs adjustments)
+
+        let saveGame = <StyledSaveGame onClick={this.getGame}>🔖</StyledSaveGame>; //This will save the game (Needs adjustments)
 
         if(this.props.saved === true) { //If the game is saved replace with X icon
             saveGame = <StyledDeleteGame onClick={this.deleteGame}>X</StyledDeleteGame>;
@@ -95,10 +81,6 @@ class GameCard extends Component {
 //React-Redux
 const mapStateToProps = state => {
     return {
-        listOfGamesState: state.topPCRanking,
-        listOfGamesState2: state.hoursWatchedRanking,
-        listOfGamesState3: state.top5PC,
-        listOfGamesState4: state.top5HoursWatched,
         savedGamesState: state.savedGames
     }
 }

@@ -3,10 +3,11 @@ import {Link} from 'react-router-dom';
 
 export const StyledContainer = styled.div`
     height: 50px;
+    position:relative;
     bottom: 0px;
+    margin-top: 0px;
     background-color: grey;
-    margin-top: -10px;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

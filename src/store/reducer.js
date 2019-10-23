@@ -7,7 +7,7 @@ const initialState = {
     topPCRanking: null,
     gameId: null,
     gameDetails: null,
-    savedGames : []
+    savedGames: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -49,27 +49,30 @@ const reducer = (state = initialState, action) => {
                 gameDetails: gameDetails
             }
         case actionTypes.SAVE_GAME:
-            let newSavedGames = [...state.savedGames, action.payload]
-            return{
+            let newSavedGames = [
+                ...state.savedGames
+            ];
+            newSavedGames = [...newSavedGames, action.payload]
+            return {
                 ...state,
-                savedGames : newSavedGames
+                savedGames: newSavedGames
             }
         case actionTypes.DELETE_GAME:
             let updatedGames = [
                 ...state.savedGames
-              ];
-              updatedGames.splice(
+            ];
+            updatedGames.splice(
                 updatedGames.findIndex(e => e.title === action.payload),
                 1
             )
-            return{
+            return {
                 ...state,
-                savedGames : updatedGames
+                savedGames: updatedGames
             }
         default:
             return state;
     }
-    
+
 };
 
 

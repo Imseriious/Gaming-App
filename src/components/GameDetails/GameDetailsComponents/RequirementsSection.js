@@ -14,7 +14,6 @@ import {
 //Component: 
 class RequirementsSection extends Component {
     render() {
-        console.log(this.props.requirements)
         let requirements;
         if (this.props.requirements[0] !== undefined) { //This could be improved:
             requirements = <>
