@@ -8,7 +8,8 @@ export const StyledContainer = styled.div`
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(0, 91, 24, 0.1);
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? '#111' : 'none'};
     @media only screen and (max-width: 555px) {
         margin: 0px auto;
     }

@@ -33,3 +33,21 @@ export const StyledSavedGamesLink = styled(Link)`
         transform: scale(1.1);
     }
 `;
+ 
+export const StyledDarkModeButton = styled.button`
+    all:unset;
+    cursor: pointer;
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? '#426c47' : '#464643'};
+    border-radius:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'black' : 'white'};
+    height: 20px;
+    margin-top: 50px;
+    padding: 10px;
+    transition-duration: 0.3s;
+    &:hover {
+        transform:scale(1.1)
+    }
+`;

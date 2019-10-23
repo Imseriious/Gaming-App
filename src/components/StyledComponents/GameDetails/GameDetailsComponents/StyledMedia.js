@@ -12,8 +12,10 @@ export const StyledTitle = styled.h2`
     margin-top: 0px;
     text-align: left;
     border-top: 0.5px grey solid;
+    color: ${props =>
+    props.theme.mode === 'dark' ? '#00a82d' : 'none'};
 `;
-
+ 
 
 export const StyledImages = styled.div`
     display: flex;

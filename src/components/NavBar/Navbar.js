@@ -6,15 +6,17 @@ import {
     StyledNavBar,
     StyledLogoLink,
     StyledLogoImage,
-    StyledSavedGamesLink
+    StyledSavedGamesLink,
+    StyledDarkModeButton
 } from '../StyledComponents/NavBar/StyledNavBar';
 
 //Component: 
-const Navbar = () => {
+const Navbar = (props) => {
     
     return (
         <StyledNavBar>
             <StyledLogoLink to="/"><StyledLogoImage  src={Logo}/></StyledLogoLink>
+            <StyledDarkModeButton onClick={props.toggleTheme}>Night Mode 🌚</StyledDarkModeButton>
             <StyledSavedGamesLink to="/SavedGames">Saved Games🔖</StyledSavedGamesLink>
         </StyledNavBar>
     )

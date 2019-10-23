@@ -19,9 +19,13 @@ export const StyledDescription = styled.p`
     text-align: left;
     padding: 0 20px;
     line-height: 25px;
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? '#3c895f' : 'none'};
 `;
 
 export const StyledDescriptionTitle = styled.h2`
     margin-top: 0px;
     text-align: left;
+    color: ${props =>
+    props.theme.mode === 'dark' ? '#00a82d' : 'black'};
 `;

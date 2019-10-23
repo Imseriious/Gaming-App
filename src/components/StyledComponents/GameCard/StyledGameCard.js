@@ -5,6 +5,7 @@ export const StyledGameCard = styled.div`
     display: flex;
     flex-direction: column;
     transition-duration: 0.2s;
+    
     &:hover{
         transform: scale(1.1)
     }
@@ -18,7 +19,7 @@ export const StyledGameCard = styled.div`
     }
     
 `;
-
+ 
 export const StyledSaveGame = styled.button`
     all:unset;
     font-size: 1.4rem;
@@ -35,6 +36,8 @@ export const StyledDeleteGame = styled.button`
     font-size: 1.4rem;
     width: 30px;
     transition-duration: 0.2s;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white' : 'black'};
     &:hover{
         cursor: pointer;
         transform: scale(1.4)
@@ -54,7 +57,8 @@ export const StyledBasicInfo = styled.div`
     justify-content: space-between;
     padding-top: 5px;
     margin-top: -5px;
-    background-color: white;
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? 'black' : 'white'};
     height: 70px;
     margin-bottom: 10px;
     border-radius: 0px 0px 10px 10px;
@@ -66,6 +70,8 @@ export const StyledTitle = styled.p`
     text-align: center;
     max-width: 250px;
     font-weight: 700;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white' : 'black'};
 `;
 
 
@@ -73,6 +79,8 @@ export const StyledHoursViewed = styled.p`
     font-size: 16px;
     text-decoration: none;
     margin-top: 0px;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white' : 'black'};
 `;
 
 

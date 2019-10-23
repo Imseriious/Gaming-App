@@ -21,7 +21,7 @@ export const StyledDetailsSection = styled.div`
         text-align: center;
     }
 `;
-
+ 
 export const StyledRank = styled.div`
     display: flex;
     flex-direction: row;
@@ -35,6 +35,9 @@ export const StyledRank = styled.div`
 export const StyledRankTitle = styled.h2`
     margin-top: 0px;
     margin-right: 15px;
+    color: ${props =>
+    props.theme.mode === 'dark' ? '#00a82d' : 'black'};
+    text-shadow: 1px 1px 1px #000000;
     @media only screen and (max-width: 555px) {
         
         text-align: center;
@@ -43,21 +46,29 @@ export const StyledRankTitle = styled.h2`
 
 export const StyledRankNumber = styled.h2`
     margin-top: 0px;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white ' : 'none'};
 `;
 
 export const StyledGenres = styled.div`
-    
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white ' : 'none'};
 `;
 
 export const StyledPublisher = styled.div`
     list-style-type: none;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white ' : 'none'};
 `;
 
 export const StyledReleaseDate = styled.div`
-
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white ' : 'none'};
 `;
-
+ 
 
 export const StyledPlatforms = styled.div`
     list-style-type: none;
+    color: ${props =>
+    props.theme.mode === 'dark' ? 'white ' : 'none'};
 `;

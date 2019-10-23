@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
     width: 100%;
-    background-color: rgba(0, 91, 24, 0.1);
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? '#111' : 'rgba(0, 91, 24, 0.1)'};
     margin-top: 50px;
     padding-top: 50px;
     `;

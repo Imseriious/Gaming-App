@@ -22,7 +22,7 @@ class DetailsSection extends Component {
             <StyledDetailsSection>
                 <StyledRank><StyledRankTitle>Rank:</StyledRankTitle><StyledRankNumber>{this.props.rank}</StyledRankNumber></StyledRank>
                 <StyledPublisher><h2>Publisher:</h2>{gamePublishers}</StyledPublisher>
-                <StyledGenres><h2>Genre</h2>{this.props.genre}</StyledGenres>
+                <StyledGenres><h2>Genre:</h2>{this.props.genre}</StyledGenres>
                 <StyledReleaseDate><h2>Release Date:</h2>{releaseDate}</StyledReleaseDate>
                 <StyledPlatforms><h2>Platforms:</h2>{platforms}</StyledPlatforms>
             </StyledDetailsSection>

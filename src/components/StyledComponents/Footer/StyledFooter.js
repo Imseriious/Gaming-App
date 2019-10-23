@@ -6,7 +6,8 @@ export const StyledContainer = styled.div`
     position:relative;
     bottom: 0px;
     margin-top: 0px;
-    background-color: grey;
+    background-color: ${props =>
+    props.theme.mode === 'dark' ? '#1111' : '#dbf3e1'};
     padding: 20px;
     display: flex;
     flex-direction: row;
