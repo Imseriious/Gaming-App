@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
-    width: 90%
+    width: 90%;
     margin: auto;
+    margin-bottom: 20px;
 `;
 
 export const StyledTitle = styled.h1`
+margin: 0px;
     text-align: left;
     font-weight: 400;
     color: #00a82d;
@@ -15,12 +17,16 @@ export const StyledTitle = styled.h1`
     }
 `;
 
-export const StyledGenresList = styled.ul`
+export const StyledGenresList = styled.div`
     list-style: none;
+    margin: 0px 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    @media only screen and (max-width: 577px) {
+        justify-content: center;
+    }
 `;
 
 export const StyledGenre = styled.button`
@@ -37,6 +43,11 @@ export const StyledGenre = styled.button`
         cursor: pointer;
         background-color: #00a82d;
         transform: scale(0.95)
+    }
+    @media only screen and (max-width: 577px) {
+        max-width: 80px;
+        font-size: 0.7rem;
+        margin: 5px;
     }
 `;
 
