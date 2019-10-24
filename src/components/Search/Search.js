@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-//Router:
 //Components:
 import SearchResult from './Results';
 //Axios:
 import axios from 'axios';
 import { headers, getGameIDUrl } from '../../axios/axios';
-
 //Styles:
 import {
     StyledForm,
@@ -21,8 +19,7 @@ class Search extends Component {
     state = {
         results: null
     }
-
-    findGames = (event) => {
+    findGames = (event) => { //Cancel request when empty event.target.value missing
         let searchText = event.target.value
         if (event.target.value) {
             let body = {
@@ -30,36 +27,27 @@ class Search extends Component {
             }
             axios.post(getGameIDUrl, body, headers)
                 .then(res => res.data.filter((result) => { return result.type === "game" }))
-                .then(res => this.setState({ results: res }))
-                .then(console.log(this.state.results))
+                .then(res => this.setState({ results: res })) 
         } else {
             this.setState({ results: null })
         }
 
-
     }
- 
-
     render() {
         let showResults;
 
-
-        if (this.state.results)
-
-            if (this.state.results === null) {
-                showResults = null;
-            } else {
-                let results = this.state.results.map(result => (
-                    <StyledLink key={result.name} to={`/game/${result.name}`}> 
-                        <SearchResult
-                            name={result.name}
-                        />
-                    </StyledLink>)
-                )
-
-                showResults = <StyledResults>{results}</StyledResults>
-            }
-
+        if (this.state.results === null) {
+            showResults = null;
+        } else {
+            let results = this.state.results.map(result => (
+                <StyledLink key={result.name} to={`/game/${result.name}`}>
+                    <SearchResult
+                        name={result.name}
+                    />
+                </StyledLink>)
+            )
+            showResults = <StyledResults>{results}</StyledResults>
+        }
         return (
             <StyledContainer>
                 <StyledFormContainer>
@@ -67,7 +55,7 @@ class Search extends Component {
                         <StyledInput
                             type="text"
                             placeholder="Search Game..."
-                            onChange={this.findGames} /> 
+                            onChange={this.findGames} />
                     </StyledForm>
                 </StyledFormContainer>
                 {showResults}
@@ -75,5 +63,4 @@ class Search extends Component {
         )
     }
 }
-
 export default Search;

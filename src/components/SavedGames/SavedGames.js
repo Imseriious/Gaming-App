@@ -12,11 +12,8 @@ import {
 
 } from '../StyledComponents/SavedGames/SavedGames';
 
-
 //Component:
 class SavedGames extends Component {
-
-    
 
     render() {
         let SavedGamesList = <h1>Loading...</h1>

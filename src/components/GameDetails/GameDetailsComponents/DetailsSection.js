@@ -9,15 +9,15 @@ import {
     StyledPlatforms,
     StyledRankTitle,
     StyledRankNumber
-
 } from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledDetailsSection';
 
 //Component:
 class DetailsSection extends Component {
     render(){
-        let releaseDate = this.props.release.slice(0, 10);
+        let releaseDate = this.props.release.slice(0, 10); //Insead of using moment.js
         let gamePublishers = this.props.publishers.map(publisher => (<li key={publisher}>{publisher}</li>));
         let platforms = this.props.platforms.map(platform => <li key={platform}>{platform}</li>)
+        
         return(
             <StyledDetailsSection>
                 <StyledRank><StyledRankTitle>Rank:</StyledRankTitle><StyledRankNumber>{this.props.rank}</StyledRankNumber></StyledRank>

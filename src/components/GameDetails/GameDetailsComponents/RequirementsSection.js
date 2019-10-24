@@ -15,7 +15,7 @@ import {
 class RequirementsSection extends Component {
     render() {
         let requirements;
-        if (this.props.requirements[0] !== undefined) { //This could be improved:
+        if (this.props.requirements[0] !== undefined) { //Wrong wrapped, will work on it.
             requirements = <>
                 <StyledTitle>Requirements:</StyledTitle>
                 <StyledRequirements>
@@ -52,7 +52,6 @@ class RequirementsSection extends Component {
         } else if (this.props.requirements[0] === undefined) {
             requirements =
                 <StyledNoRequirements>No hardware requirements found</StyledNoRequirements>
-
         }
         return (
             <StyledContainer>

@@ -41,6 +41,7 @@ class GameDetails extends Component {
                 console.log(error);
             });
     }
+
     getGameDetails() {
         const API_URL = `https://api.newzoo.com/v1.0/metadata/game/${this.props.gameIdState}?__permission_set=Explorer%20Games`;
 
@@ -64,12 +65,14 @@ class GameDetails extends Component {
             gameDetails = this.props.gameDetailsState
         }
         if (gameDetails !== undefined) {
+            
             //GameName:
             gameName = <StyledGameName>🎮{gameDetails.name}</StyledGameName>
 
             //BoxArtSection:
             boxArtSection =
                 <BoxArtSection name={gameDetails.name}/>;
+
             //DetailsSection:
             let gamePublishers = gameDetails.publishers.map(publisher => publisher.name)
             detailsSection =
@@ -81,15 +84,18 @@ class GameDetails extends Component {
                     rank={gameDetails.rank}
                     platforms={gameDetails.release_dates[0].platforms}
                 />
+
             //DescriptionSection:
             descriptionSection =
                 <DescriptionSection
                     description={gameDetails.description}
                 />
+
             //MediaSection:
             mediaSection = 
                 <MediaSection 
                     files={gameDetails.media_files} />
+
             //RequirementsSection
             requirementsSection = 
                 <RequirementsSection 

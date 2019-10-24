@@ -8,7 +8,6 @@ import {
 
 class Results extends Component {
 
-
     render() {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.name}`;
         return (

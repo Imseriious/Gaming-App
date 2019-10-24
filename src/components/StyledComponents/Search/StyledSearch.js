@@ -35,6 +35,7 @@ export const StyledInput = styled.input`
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     &:hover{
+        border: 1px green solid;
         box-shadow: 0 4px 8px 0 rgba(160, 251, 70, 0.6), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
     }
 `;

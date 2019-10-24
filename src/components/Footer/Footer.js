@@ -1,9 +1,10 @@
 import React from 'react';
+//Styled:
 import {
     StyledContainer,
     StyledLink
 } from '../StyledComponents/Footer/StyledFooter';
-
+//Component:
 const Footer = () => {
     return(
         <StyledContainer>
@@ -13,5 +14,4 @@ const Footer = () => {
         </StyledContainer>
     )
 }
-
 export default Footer;

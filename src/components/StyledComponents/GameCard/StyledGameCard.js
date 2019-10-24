@@ -48,20 +48,6 @@ export const StyledDeleteGame = styled.button`
     }
 `;
 
-
-// export const StyledDeleteGame = styled.button`
-//     all:unset;
-//     font-size: 1.4rem;
-//     width: 30px;
-//     transition-duration: 0.2s;
-//     color: ${props =>
-//     props.theme.mode === 'dark' ? 'white' : 'black'};
-//     &:hover{
-//         cursor: pointer;
-//         transform: scale(1.4)
-//     }
-// `;
-
 export const StyledBoxArt = styled.img`
     width: 250px;
     border-radius: 10px 10px 0px 0px;

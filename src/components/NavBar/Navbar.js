@@ -13,10 +13,10 @@ import {
 //Component: 
 const Navbar = (props) => {
     
-    return (
+    return ( 
         <StyledNavBar>
             <StyledLogoLink to="/"><StyledLogoImage  src={Logo}/></StyledLogoLink>
-            <StyledDarkModeButton onClick={props.toggleTheme}>Night Mode 🌚</StyledDarkModeButton>
+            <StyledDarkModeButton onClick={props.toggleTheme}>Night Mode 🌚</StyledDarkModeButton> 
             <StyledSavedGamesLink to="/SavedGames">Saved Games🔖</StyledSavedGamesLink>
         </StyledNavBar>
     )

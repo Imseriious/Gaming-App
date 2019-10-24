@@ -21,7 +21,6 @@ import {
 
 //Component:
 class GameCard extends Component {
-   
 
     deleteGame = () => {
         let gameName = this.props.title
@@ -32,12 +31,12 @@ class GameCard extends Component {
         let body = {
             "search_text": `${this.props.title}`, "fields": ["id", "name", "release_dates"]
         }
-        
+
         axios.post(getGameIDUrl, body, headers)
             .then(res => res.data.filter((result) => { return result.type === "game" }))
             .then(res => this.saveGame(res[0].id))
-    
-}
+    }
+
     saveGame = (game_id) => { //Saving the game based on the ID
         let API_URL = `https://api.newzoo.com/v1.0/metadata/game/${game_id}?__permission_set=Explorer%20Games`;
         axios.get(API_URL, headers)
@@ -47,16 +46,16 @@ class GameCard extends Component {
     render() {
         const boxart = `https://api-test.newzoo.com:443/v1.0/metadata/game/boxart?name=${this.props.title}`;
 
-        let saveGame = <StyledSaveGame onClick={this.getGame}>🔖</StyledSaveGame>; //This will save the game (Needs adjustments)
-        if(this.props.savedGamesState) {
+        let saveGame = <StyledSaveGame onClick={this.getGame}>🔖</StyledSaveGame>; //This will save the game
+        if (this.props.savedGamesState) {
             this.props.savedGamesState.map(game => {
-                if(game.name === this.props.title){
-                    saveGame = <StyledSaved>Saved!</StyledSaved>
+                if (game.name === this.props.title) {
+                    saveGame = <StyledSaved>Saved!</StyledSaved> //If title is saved replace icon
                 }
             })
         }
 
-        if(this.props.saved === true) { //If the game is saved replace with X icon
+        if (this.props.saved === true) { //In the SavedGames replace button with "X"
             saveGame = <StyledDeleteGame onClick={this.deleteGame}>X</StyledDeleteGame>;
         }
 
@@ -93,7 +92,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         saveGame: (res) => dispatch({ type: actionType.SAVE_GAME, payload: res }),
-        deleteGame: (res) => dispatch({type: actionType.DELETE_GAME, payload: res})
+        deleteGame: (res) => dispatch({ type: actionType.DELETE_GAME, payload: res })
     }
 }
 

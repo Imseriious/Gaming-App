@@ -25,7 +25,6 @@ class Top5HoursWatched extends Component {
         axios.get(mostWatched5GamesUrl, headers)
             .then((res) => {
                 this.props.hoursWatched(res)
-                //console.log(this.props.hWatched)
             })
             .catch((err) => {
                 console.log("Error", err)

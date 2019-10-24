@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {
     StyledBoxArtSection,
     StyledBoxArt
-
 } from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledBoxArtSection';
 
 //Component:

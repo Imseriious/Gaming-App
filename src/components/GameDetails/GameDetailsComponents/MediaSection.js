@@ -11,18 +11,18 @@ import {
     StyledImageLink
 
 } from '../../StyledComponents/GameDetails/GameDetailsComponents/StyledMedia';
+
 //Component:
 class MediaSection extends Component {
     render() {
         let mediaFiles = this.props.files;
         let images;
         let videos;
-        //console.log(mediaFiles)
         //Get images:
         images = mediaFiles.map(file => {
-            if (file.type === "image") {
+            if (file.type === "image") { //Instead of _blank I could create a modal too.
                 return (
-                    <StyledImageLink target="_blank" href={file.url}>
+                    <StyledImageLink target="_blank" href={file.url}> 
                         <StyledImage
                             key={file.id}
                             src={file.url}
@@ -42,11 +42,10 @@ class MediaSection extends Component {
         //Get videos: 
         videos = mediaFiles.map(file => {
             if (file.type === "video") {
-                let videoId = file.url.slice(32, file.url.length) //Fastest solution, I know ...
-                // console.log(videoId)
+                let videoId = file.url.slice(32, file.url.length) //Not very professional solution
                 return (
                     <StyledVideo>
-                        <YouTube
+                        <YouTube //This will create console warning, I didn't find a solution for it.
                             key={file.id}
                             videoId={videoId}
                             opts={opts}

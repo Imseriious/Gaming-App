@@ -10,7 +10,7 @@ const initialState = {
     savedGames: []
 }
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => { //I could use mulitple reducers for a cleaner code too.
     switch (action.type) {
         case actionTypes.TOP_5_HOURS_WATCHED:
             const top5HoursWatched = action.payload.data.data;

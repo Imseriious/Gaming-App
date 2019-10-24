@@ -22,12 +22,9 @@ class Top5PC extends Component {
     }
 
     getTopPc() {
-
         axios.get(top5PCGamesUrl, headers)
             .then((res) => {
-                //console.log(res.data.data)
                 this.props.topPC(res)
-
             })
             .catch((err) => {
                 console.log("Error", err)
@@ -51,7 +48,7 @@ class Top5PC extends Component {
 
             <StyledContainer>
                 <StyledListInfo>
-                    <StyledTitle>Top PC Games🖱️</StyledTitle>
+                    <StyledTitle>Top PC Games🖱️</StyledTitle> 
                     <StyledSeeMoreLink to="/TopPcRanking" >See more...</StyledSeeMoreLink>
                 </StyledListInfo>
                 <StyledListOfGames>

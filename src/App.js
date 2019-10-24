@@ -22,26 +22,25 @@ const GlobalStyle = createGlobalStyle` //Example GlobalStyle
 
 class App extends Component {
 
-  state= {
-    darkMode : 'light'
+  state = { //No need of Redux, could also be stored in Local Storage.
+    darkMode: 'light'
   }
 
   toggleTheme = () => {
-    if(this.state.darkMode === 'light'){
-      this.setState({darkMode : 'dark'})
+    if (this.state.darkMode === 'light') {
+      this.setState({ darkMode: 'dark' })
     } else {
-      this.setState({darkMode : 'light'})
+      this.setState({ darkMode: 'light' })
     }
   }
-  
 
   render() {
 
     return (
-      <ThemeProvider theme={{mode : this.state.darkMode}}>
+      <ThemeProvider theme={{ mode: this.state.darkMode }}>
         <GlobalStyle />
         <div className="App">
-          <Navbar toggleTheme={this.toggleTheme}/>
+          <Navbar toggleTheme={this.toggleTheme} />
           <Route path="/" exact component={HomePage} />
           <Route path="/HoursWatchedRanking" component={HoursWatchedRanking} />
           <Route path="/TopPcRanking" component={TopPCRanking} />
