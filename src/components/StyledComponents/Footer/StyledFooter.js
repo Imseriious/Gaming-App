@@ -8,6 +8,8 @@ export const StyledContainer = styled.div`
     margin-top: 0px;
     background-color: ${props =>
     props.theme.mode === 'dark' ? '#1111' : '#dbf3e1'};
+    border-top: ${props =>
+    props.theme.mode === 'dark' ? '1px white solid' : 'none'};
     padding: 20px;
     display: flex;
     flex-direction: row;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 export const StyledContainer = styled.div`
     width: 90%;
@@ -33,7 +34,7 @@ export const StyledGenresList = styled.div`
     }
 `;
 
-export const StyledGenre = styled.button`
+export const StyledGenreLink = styled(Link)`
     all:unset;
     margin: 20px; 
     min-width: 200px;

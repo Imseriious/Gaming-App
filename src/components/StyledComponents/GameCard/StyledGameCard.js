@@ -31,17 +31,18 @@ export const StyledSaveGame = styled.button`
     }
 `;
 export const StyledDeleteGame = styled.button`
-    background-color : salmon;
+    background-color : #72232d;
     cursor: pointer;
     width: 70px;
     padding-bottom: 20px;
     border-radius: 10px 10px 0px 0px;
+    border: 2px black solid;
     margin-bottom: -20px;
     padding-left: 5px;
     font-size: 18px; 
     text-align: left;
     color: white;
-    font-weight: 300;
+    font-weight: 700;
     &:hover{
          cursor: pointer;
          margin-bottom: -10px;
@@ -91,12 +92,13 @@ export const StyledSaved = styled.p`
     background-color : #00a82d;
     width: 70px;
     padding-bottom: 20px;
+    border: 2px black solid;
     border-radius: 10px 10px 0px 0px;
     margin-bottom: -20px;
     padding-left: 5px;
     font-size: 18px; 
     text-align: left;
-    color: white;
-    font-weight: 300;
+    color: black;
+    font-weight: 500;
 `;
 

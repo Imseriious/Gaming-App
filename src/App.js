@@ -10,6 +10,7 @@ import HoursWatchedRanking from './components/Rankings/HoursWatchedRanking/Hours
 import TopPCRanking from './components/Rankings/TopPCRanking/TopPCRanking';
 import SavedGames from './components/SavedGames/SavedGames';
 import Footer from './components/Footer/Footer';
+import Genre from './components/Genre/Genre';
 
 
 const GlobalStyle = createGlobalStyle` //Example GlobalStyle
@@ -46,6 +47,7 @@ class App extends Component {
           <Route path="/TopPcRanking" component={TopPCRanking} />
           <Route path="/game/:title" exact component={GameDetails} />
           <Route path="/SavedGames" exact component={SavedGames} />
+          <Route path="/genre/:name" exact component={Genre} />
           <Footer />
         </div>
       </ThemeProvider>
