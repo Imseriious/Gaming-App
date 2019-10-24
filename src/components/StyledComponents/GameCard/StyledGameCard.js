@@ -62,7 +62,7 @@ export const StyledBasicInfo = styled.div`
     padding-top: 5px;
     margin-top: -5px;
     background-color: ${props =>
-        props.theme.mode === 'dark' ? 'black' : 'white'};
+        props.theme.mode === 'dark' ? '#222220' : 'white'};
     height: 70px;
     margin-bottom: 10px;
     border-radius: 0px 0px 10px 10px;

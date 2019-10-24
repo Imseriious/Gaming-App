@@ -3,15 +3,16 @@ import {Link} from 'react-router-dom';
 
 export const StyledContainer = styled.div`
     width: 100%;
+    border-top: 1px green solid;
     margin: 10px auto;
-    padding: 40px 0;
+    padding: 5px 0;
     display:flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: ${props =>
     props.theme.mode === 'dark' ? '#111' : 'none'};
     @media only screen and (max-width: 555px) {
-        margin: 0px auto;
+        margin: 10px auto;
     }
 `
 export const StyledListInfo = styled.div`

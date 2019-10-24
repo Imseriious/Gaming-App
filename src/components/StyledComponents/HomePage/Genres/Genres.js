@@ -2,12 +2,16 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
     width: 90%;
-    margin: auto;
+    margin: 10px auto;
     margin-bottom: 20px;
+    border-top: 1px green solid;
+    @media only screen and (max-width: 555px) {
+        margin-top: 25px;
+    }
 `;
 
 export const StyledTitle = styled.h1`
-margin: 0px;
+    margin-top: 10px;
     text-align: left;
     font-weight: 400;
     color: #00a82d;
