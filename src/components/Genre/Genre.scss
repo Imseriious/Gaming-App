@@ -1,0 +1,54 @@
+$NewZooGreen: #00a82d; //Taken from platform
+$DescriptionBg:  rgba(50, 185, 86, 0.2);
+
+.Container {
+    width: 100%;
+}
+
+.Title{
+    font-family: 'Montserrat', sans-serif;
+    margin: auto;
+    margin-top: -50px;
+    font-weight: 700;
+    color: $NewZooGreen;
+    text-shadow: 1px 1px 1px #000000;
+    text-align: center;
+    @media only screen and (max-width: 555px){
+        margin-top: 0px;
+    }
+}
+
+.Media{
+    margin: 50px auto;
+    width: 95%;
+}
+
+.Image{
+    width: 40%;
+    margin: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    @media only screen and (max-width: 800px) {
+        width: 85%;
+    }
+}
+
+.DescriptionContainer{
+    width: 100%;
+    background-color: $DescriptionBg;
+    padding: 40px 0;
+    margin: 40px auto;
+}
+
+.Description{
+    width: 90%;
+    font-size: 1.5rem;
+    text-align: justify;
+    line-height: 2rem;
+    margin: auto;
+    @media only screen and (max-width: 800px) {
+        font-size: 1.2rem; 
+        line-height: 1.8rem;
+    }
+}
+

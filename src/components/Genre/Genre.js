@@ -13,7 +13,7 @@ import {
 
 
 } from '../StyledComponents/Genre/Genre';
-import { StyledDescription } from '../StyledComponents/GameDetails/GameDetailsComponents/StyledDescriptionSection';
+//import './Genre.scss'; Example SCSS
 
 
 //Component: 
@@ -46,10 +46,9 @@ class Genre extends Component {
         let genderMedia;
 
         if (this.state.genre !== null) {
-            console.log(this.state.genre)
             genderName = this.state.genre[0].name
             genderMedia = this.state.genre[0].media_files.map(image => (
-                <StyledGenreImage src={image.url} />
+                <StyledGenreImage key={image.url} src={image.url} />
             ));
             genderDescription = this.state.genre[0].description
         }
@@ -65,14 +64,14 @@ class Genre extends Component {
     }
 }
 
-//Trying Styles SCSS:
+//Example SCSS:
 
-//<div className="">
-{/* <h1 className="">{genderName}🎲</h1>
-<div className="">
-    <p>{genderDescription}</p>
+//<div className="Container">
+{/* <h1 className="Title">{genderName}🎲</h1>
+<div className="DescriptionContainer">
+    <p className="Description">{genderDescription}</p>
 </div>
-<div>{genderMedia}</div> */}
+<div className="Media">{genderMedia}</div> */}
 
 //</div>
 
