@@ -13,6 +13,7 @@ import {
 
 
 } from '../StyledComponents/Genre/Genre';
+import { StyledDescription } from '../StyledComponents/GameDetails/GameDetailsComponents/StyledDescriptionSection';
 
 
 //Component: 
@@ -55,11 +56,24 @@ class Genre extends Component {
         return (
             <StyledContainer>
                 <StyledGenreTitle>{genderName}🎲</StyledGenreTitle>
-                <StyledDescContainer><StyledGenreDescription>{genderDescription}</StyledGenreDescription></StyledDescContainer>
+                <StyledDescContainer>
+                    <StyledGenreDescription>{genderDescription}</StyledGenreDescription>
+                </StyledDescContainer>
                 <StyledGenreMedia>{genderMedia}</StyledGenreMedia>
             </StyledContainer>
         )
     }
 }
+
+//Trying Styles SCSS:
+
+//<div className="">
+{/* <h1 className="">{genderName}🎲</h1>
+<div className="">
+    <p>{genderDescription}</p>
+</div>
+<div>{genderMedia}</div> */}
+
+//</div>
 
 export default Genre;

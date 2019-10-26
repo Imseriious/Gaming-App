@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { Route } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle` //Example GlobalStyle
 
 class App extends Component {
 
-  state = { //No need of Redux, could also be stored in Local Storage.
+  state = { //No need of Redux here , could also be stored in Local Storage.
     darkMode: 'light'
   }
 

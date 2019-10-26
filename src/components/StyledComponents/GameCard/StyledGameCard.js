@@ -88,6 +88,14 @@ export const StyledHoursViewed = styled.p`
         props.theme.mode === 'dark' ? 'white' : 'black'};
 `;
 
+export const StyledGameRank = styled.p`
+    margin: 0px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: 600;
+    color: #00a82d;
+`;
+
 export const StyledSaved = styled.p`
     background-color : #00a82d;
     width: 70px;

@@ -16,7 +16,8 @@ import {
     StyledTitle,
     StyledSaveGame,
     StyledDeleteGame,
-    StyledSaved
+    StyledSaved,
+    StyledGameRank
 } from '../StyledComponents/GameCard/StyledGameCard';
 
 //Component:
@@ -66,6 +67,11 @@ class GameCard extends Component {
             hoursViewed = <StyledHoursViewed>Total Hours Wached: {totalHours.slice(0, 2)}M</StyledHoursViewed>
         }
 
+        let gameRank = null;
+        if(this.props.rank) {
+            gameRank = <StyledGameRank>Rank: {this.props.rank}</StyledGameRank>
+        }
+
         return (
             <StyledGameCard>
                 {saveGame}
@@ -75,6 +81,7 @@ class GameCard extends Component {
                 <StyledBasicInfo>
                     <StyledTitle>{this.props.title}</StyledTitle>
                     {hoursViewed}
+                    {gameRank}
                 </StyledBasicInfo>
             </StyledGameCard>
         )

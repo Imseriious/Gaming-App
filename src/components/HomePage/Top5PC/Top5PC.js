@@ -39,6 +39,7 @@ class Top5PC extends Component {
                 <GameCard
                     key={game.title}
                     title={game.title}
+                    rank={game.rank}
                 />
             ))
 

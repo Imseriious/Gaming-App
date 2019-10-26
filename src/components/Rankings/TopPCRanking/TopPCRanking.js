@@ -41,6 +41,7 @@ class TopPCRanking extends Component {
                     key={game.title}
                     title={game.title}
                     genre={game.genre}
+                    rank={game.rank}
                 />
             ))
 

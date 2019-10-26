@@ -29,6 +29,7 @@ class SavedGames extends Component {
                     title={game.name}
                     hoursViewed={game.hours_viewed}
                     saved={true}
+                    rank={game.rank}
                 />
             ))
         } 
