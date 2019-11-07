@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //Axios-Redux:
-import axios from 'axios';
-import { top5PCGamesUrl, headers } from '../../../axios/axios';
+import Api, { top5PCGamesUrl} from '../../../axios/api';
 import * as actionType from '../../../store/actions';
 import { connect } from 'react-redux';
 //Components:
@@ -22,7 +21,7 @@ class Top5PC extends Component {
     }
 
     getTopPc() {
-        axios.get(top5PCGamesUrl, headers)
+        Api.get(top5PCGamesUrl)
             .then((res) => {
                 this.props.topPC(res)
             })

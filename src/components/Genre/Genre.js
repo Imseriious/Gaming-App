@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //Axios:
-import axios from 'axios';
-import { genreUrl, headers } from '../../axios/axios';
+import Api, {genreUrl} from '../../axios/api';
 //Styles:
 import {
     StyledContainer,
@@ -12,7 +11,6 @@ import {
     StyledDescContainer
 
 } from '../StyledComponents/Genre/Genre';
-//import './Genre.scss'; Example SCSS
 
 //Component: 
 class Genre extends Component {
@@ -29,7 +27,7 @@ class Genre extends Component {
     }
 
     getGenreData = () => {
-        axios.post(genreUrl, {}, headers)
+        Api.post(genreUrl, {})
             .then(res => {
                 let genresArray = res.data;
                 let genreDetails = genresArray.filter(genre => genre.name === this.state.genreName);
@@ -60,16 +58,5 @@ class Genre extends Component {
         )
     }
 }
-
-//Example SCSS:
-
-//<div className="Container">
-{/* <h1 className="Title">{genderName}🎲</h1>
-<div className="DescriptionContainer">
-    <p className="Description">{genderDescription}</p>
-</div>
-<div className="Media">{genderMedia}</div> */}
-
-//</div>
 
 export default Genre;

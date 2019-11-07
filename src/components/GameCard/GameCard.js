@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actionType from '../../store/actions';
 //Axios:
-import axios from 'axios';
-import { headers, getGameIDUrl } from '../../axios/axios';
+import Api, {getGameIDUrl} from '../../axios/api';
 //Router:
 import { Link } from 'react-router-dom';
 //Styles:
@@ -34,14 +33,14 @@ class GameCard extends Component {
             "search_text": `${this.props.title}`, "fields": ["id", "name", "release_dates"]
         }
 
-        axios.post(getGameIDUrl, body, headers)
+        Api.post(getGameIDUrl, body)
             .then(res => res.data.filter((result) => { return result.type === "game" }))
             .then(res => this.saveGame(res[0].id))
     }
 
     saveGame = (game_id) => { //Saving the game based on the ID
-        let API_URL = `https://api.newzoo.com/v1.0/metadata/game/${game_id}?__permission_set=Explorer%20Games`;
-        axios.get(API_URL, headers)
+        let API_URL = `metadata/game/${game_id}?__permission_set=Explorer%20Games`;
+        Api.get(API_URL)
             .then(res => this.props.saveGame(res.data))
     }
 

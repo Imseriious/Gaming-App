@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-//Axios-Redux
-import axios from 'axios';
-import { getGameIDUrl, headers } from '../../axios/axios';
+//import { getGameIDUrl, headers } from '../../axios/axios';
+import Api, { getGameIDUrl } from '../../axios/api';
 import * as actionType from "../../store/actions";
 import { connect } from 'react-redux';
 //Components:
@@ -32,7 +31,7 @@ class GameDetails extends Component {
         const body = {
             "search_text": `${this.props.match.params.title}`, "fields": ["id", "name", "release_dates"]
         }
-        axios.post(getGameIDUrl, body, headers)
+        Api.post(getGameIDUrl, body)
             .then(res => {
                 this.props.gameId(res);
                 this.getGameDetails();
@@ -40,16 +39,17 @@ class GameDetails extends Component {
             .catch(error => {
                 console.log(error);
             });
+
     }
 
     getGameDetails() {
-        const API_URL = `https://api.newzoo.com/v1.0/metadata/game/${this.props.gameIdState}?__permission_set=Explorer%20Games`;
-
-        axios.get(API_URL, headers)
+        const API_URL = `metadata/game/${this.props.gameIdState}?__permission_set=Explorer%20Games`
+        Api.get(API_URL)
             .then(res => this.props.gameDetails(res.data))
             .catch(error => {
                 console.log(error);
             })
+
     }
 
     render() {
@@ -65,13 +65,13 @@ class GameDetails extends Component {
             gameDetails = this.props.gameDetailsState
         }
         if (gameDetails !== undefined) {
-            
+
             //GameName:
             gameName = <StyledGameName>🎮{gameDetails.name}</StyledGameName>
 
             //BoxArtSection:
             boxArtSection =
-                <BoxArtSection name={gameDetails.name}/>;
+                <BoxArtSection name={gameDetails.name} />;
 
             //DetailsSection:
             let gamePublishers = gameDetails.publishers.map(publisher => publisher.name)
@@ -92,13 +92,13 @@ class GameDetails extends Component {
                 />
 
             //MediaSection:
-            mediaSection = 
-                <MediaSection 
+            mediaSection =
+                <MediaSection
                     files={gameDetails.media_files} />
 
             //RequirementsSection
-            requirementsSection = 
-                <RequirementsSection 
+            requirementsSection =
+                <RequirementsSection
                     requirements={gameDetails.hardware_requirements} />
         }
 
@@ -107,8 +107,8 @@ class GameDetails extends Component {
                 {gameName}
                 <StyledGameDetails>
                     <StyledBoxArtDetails>
-                    {boxArtSection}
-                    {detailsSection}
+                        {boxArtSection}
+                        {detailsSection}
                     </StyledBoxArtDetails>
                     <StyledDescriptionsRequirements>
                         {descriptionSection}

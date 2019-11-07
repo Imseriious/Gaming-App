@@ -7,11 +7,11 @@ import GameCard from '../GameCard/GameCard';
 import {
     StyledTitle,
     StyledContainer,
-    StyledNotSavedGames,
+    StyledNotSavedGames, 
     StyledMainContainer
 
 } from '../StyledComponents/SavedGames/SavedGames';
-
+ 
 //Component:
 class SavedGames extends Component {
 

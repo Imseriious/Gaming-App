@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 //Components:
 import SearchResult from './Results';
 //Axios:
-import axios from 'axios';
-import { headers, getGameIDUrl } from '../../axios/axios';
+import Api, { getGameIDUrl } from '../../axios/api';
 //Styles:
 import {
     StyledForm,
@@ -25,13 +24,11 @@ class Search extends Component {
             let body = {
                 "search_text": `${searchText}`, "fields": ["id", "name", "release_dates"]
             }
-            axios.post(getGameIDUrl, body, headers,)
+            Api.post(getGameIDUrl, body)
                 .then(res => res.data.filter((result) => { return result.type === "game" }))
                 .then(res => this.setState({ results: res }))
                 .catch(err => {
-                    if(axios.isCancel(err)) {
-                        console.log('Request Canceled')
-                    }
+                    console.log(err)
                 })
         } else {
             this.setState({results: null})

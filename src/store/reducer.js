@@ -20,10 +20,10 @@ const reducer = (state = initialState, action) => { //I could use mulitple reduc
             };
         case actionTypes.TOP_5_PC:
             const top5PC = action.payload.data.data;
-            return {
+            return { 
                 ...state,
                 top5PC: top5PC
-            };
+            }; 
         case actionTypes.TOP_PC_RANKING:
             const topPCRanking = action.payload.data.data;
             return {
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => { //I could use mulitple reduc
         case actionTypes.TOP_HOURS_WATCHED_RANKING:
             const hoursWatchedRanking = action.payload.data.data;
             return {
-                ...state,
+                ...state, 
                 hoursWatchedRanking: hoursWatchedRanking
             }
         case actionTypes.GAME_ID:

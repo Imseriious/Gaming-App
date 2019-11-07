@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //Axios-Redux
-import axios from 'axios';
-import {mostWatchedGamesRankingUrl, headers} from '../../../axios/axios';
+import Api, {mostWatchedGamesRankingUrl} from '../../../axios/api';
 import { connect } from 'react-redux';
 import * as actionType from '../../../store/actions';
 //Components:
@@ -20,7 +19,7 @@ class HoursWatchedRanking extends Component {
     }
 
     getTopPcRanking() {
-        axios.get(mostWatchedGamesRankingUrl, headers)
+        Api.get(mostWatchedGamesRankingUrl)
             .then((res) => {
                 this.props.hoursWatchedRanking(res)
                 

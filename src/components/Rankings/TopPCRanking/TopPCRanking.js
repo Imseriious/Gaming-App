@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //Axios-Redux
-import axios from 'axios';
-import {topPCRankingUrl, headers} from '../../../axios/axios';
+import Api, {topPCRankingUrl} from '../../../axios/api';
 import { connect } from 'react-redux';
 import * as actionType from '../../../store/actions';
 //Components:
@@ -20,9 +19,7 @@ class TopPCRanking extends Component {
     }
 
     getTopPcRanking() {
-        ;
-
-        axios.get(topPCRankingUrl, headers)
+        Api.get(topPCRankingUrl)
             .then((res) => {
                 this.props.topPCRanking(res)
                 

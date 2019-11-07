@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //Axios-Redux
-import axios from 'axios';
-import { mostWatched5GamesUrl, headers } from '../../../axios/axios';
+import Api, {mostWatched5GamesUrl} from '../../../axios/api';
 import { connect } from 'react-redux';
 import * as actionType from '../../../store/actions';
 //Components:
@@ -22,7 +21,7 @@ class Top5HoursWatched extends Component {
     }
 
     getHoursWatched() {
-        axios.get(mostWatched5GamesUrl, headers)
+        Api.get(mostWatched5GamesUrl)
             .then((res) => {
                 this.props.hoursWatched(res)
             })

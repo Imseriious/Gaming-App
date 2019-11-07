@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-
-
-//Axios-Redux
-import axios from 'axios';
-import { genresUrl, headers } from '../../../axios/axios';
+//Axios
+import Api, {genresUrl} from '../../../axios/api';
 //Styled:
 import {
     StyledContainer,
@@ -24,7 +21,7 @@ class Genres extends Component {
     }
 
     getGenres() {
-        axios.get(genresUrl, headers)
+        Api.get(genresUrl)
             .then((res) => {
                 this.setState({ genres: res.data.data })
             })
