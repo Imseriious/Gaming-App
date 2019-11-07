@@ -13,23 +13,28 @@ import {
     StyledContainer,
     StyledLink
 } from '../StyledComponents/Search/StyledSearch';
-
 //Component:
 class Search extends Component {
     state = {
         results: null
     }
+    
     findGames = (event) => { //Cancel request when empty event.target.value missing
-        let searchText = event.target.value
-        if (event.target.value) {
+        let searchText = event.target.value;
+        if (event.target.value !== "") {
             let body = {
                 "search_text": `${searchText}`, "fields": ["id", "name", "release_dates"]
             }
-            axios.post(getGameIDUrl, body, headers)
+            axios.post(getGameIDUrl, body, headers,)
                 .then(res => res.data.filter((result) => { return result.type === "game" }))
-                .then(res => this.setState({ results: res })) 
+                .then(res => this.setState({ results: res }))
+                .catch(err => {
+                    if(axios.isCancel(err)) {
+                        console.log('Request Canceled')
+                    }
+                })
         } else {
-            this.setState({ results: null })
+            this.setState({results: null})
         }
 
     }

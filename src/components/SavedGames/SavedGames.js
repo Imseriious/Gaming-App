@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //Components:
 import GameCard from '../GameCard/GameCard';
-//Styles: 
+//Styles:
 import {
     StyledTitle,
     StyledContainer,

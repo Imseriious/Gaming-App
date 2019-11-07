@@ -26,6 +26,7 @@ class GameCard extends Component {
     deleteGame = () => {
         let gameName = this.props.title
         this.props.deleteGame(gameName)
+        console.log(this.props.savedGamesState)
     }
 
     getGame = () => { //Geting Game ID

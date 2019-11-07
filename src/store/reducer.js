@@ -58,13 +58,7 @@ const reducer = (state = initialState, action) => { //I could use mulitple reduc
                 savedGames: newSavedGames
             }
         case actionTypes.DELETE_GAME:
-            let updatedGames = [
-                ...state.savedGames
-            ];
-            updatedGames.splice(
-                updatedGames.findIndex(e => e.name === action.payload),
-                1
-            )
+            let updatedGames = [...state.savedGames].filter(game => game.name !== action.payload);
             return {
                 ...state,
                 savedGames: updatedGames

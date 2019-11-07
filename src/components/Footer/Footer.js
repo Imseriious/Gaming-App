@@ -11,6 +11,7 @@ const Footer = () => {
             <StyledLink to="/">Home🏠</StyledLink>
             <StyledLink to="/HoursWatchedRanking">Viewed Ranking👀</StyledLink>
             <StyledLink to="/TopPcRanking">Top PC Ranking🖱️</StyledLink>
+           <StyledLink to="/SavedGames"> Saved Games🔖</StyledLink>
         </StyledContainer>
     )
 }

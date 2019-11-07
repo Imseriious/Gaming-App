@@ -11,10 +11,8 @@ import {
     StyledGenreImage,
     StyledDescContainer
 
-
 } from '../StyledComponents/Genre/Genre';
 //import './Genre.scss'; Example SCSS
-
 
 //Component: 
 class Genre extends Component {
@@ -28,7 +26,6 @@ class Genre extends Component {
         this.getGenreData();
         if (this.state.genre !== null) {
         }
-
     }
 
     getGenreData = () => {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
 export const StyledContainer = styled.div`
-    width: 90%;
+    width: 100%;
     margin: 10px auto;
     margin-bottom: 20px;
     border-top: 1px green solid;
@@ -12,7 +12,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledTitle = styled.h1`
-    margin-top: 10px;
+    width: 90%;
+    margin: 10px auto;
     text-align: left;
     font-weight: 400;
     color: #00a82d;
@@ -24,7 +25,8 @@ export const StyledTitle = styled.h1`
 
 export const StyledGenresList = styled.div`
     list-style: none;
-    margin: 0px 0px;
+    width: 90%;
+    margin: 0px auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

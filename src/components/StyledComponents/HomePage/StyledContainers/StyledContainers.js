@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
+import img from '../../../../assets/Apex.png';
+//background-image: url(${img});
 
 export const StyledContainer = styled.div`
     width: 100%;
     border-top: 1px green solid;
     margin: 10px auto;
+    
+    background-size:cover;
     padding: 5px 0;
     display:flex;
     flex-direction: column;
