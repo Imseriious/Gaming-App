@@ -9,10 +9,20 @@ import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import reducer from './store/reducer';
+import {loadState, saveState } from './localStorage';
+
+
+const persistedState = loadState();
 
 const store = createStore(
-    reducer, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+    reducer,
+    persistedState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+store.subscribe(() => {
+    saveState(store.getState());
+})
 
 const app = (
     <Provider store={store}>
