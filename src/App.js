@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.scss';
 import { Route } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { saveTheme, loadTheme } from './localStorage';
 
 import HomePage from './components/HomePage/HomePage';
 import GameDetails from './components/GameDetails/GameDetails';
@@ -23,22 +24,24 @@ const GlobalStyle = createGlobalStyle` //Example GlobalStyle
 
 class App extends Component {
 
-  state = { //No need of Redux here , could also be stored in Local Storage.
-    darkMode: 'light'
+  state = {
+    theme : loadTheme()
   }
 
   toggleTheme = () => {
-    if (this.state.darkMode === 'light') {
-      this.setState({ darkMode: 'dark' })
+    if (this.state.theme === 'light') {
+      this.setState({theme: 'dark'});
+      saveTheme('dark')
     } else {
-      this.setState({ darkMode: 'light' })
+      this.setState({theme: 'light'})
+      saveTheme('light')
     }
   }
 
   render() {
 
     return (
-      <ThemeProvider theme={{ mode: this.state.darkMode }}>
+      <ThemeProvider theme={{ mode: this.state.theme }}>
         <GlobalStyle />
         <div className="App">
           <Navbar toggleTheme={this.toggleTheme} />
